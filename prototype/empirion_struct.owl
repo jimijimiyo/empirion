@@ -1,0 +1,381 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://empirion.ru/empirion_struct.owl"
+         xmlns="http://empirion.ru/empirion_struct.owl#"
+         xmlns:mete="http://meteor.ru/meteor#">
+
+<owl:Ontology rdf:about="http://empirion.ru/empirion_struct.owl">
+  <owl:imports rdf:resource="http://meteor.ru/meteor.owl"/>
+</owl:Ontology>
+
+<owl:DatatypeProperty rdf:about="http://meteor.ru/meteor#hasName"/>
+
+<owl:DatatypeProperty rdf:about="http://meteor.ru/meteor#hasPath"/>
+
+<owl:Class rdf:about="http://meteor.ru/meteor#Workbook"/>
+
+<mete:Workbook rdf:about="#workbook1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <mete:hasPart rdf:resource="#sheet1"/>
+  <mete:hasPart rdf:resource="#sheet2"/>
+  <mete:hasName>setsdescr.xlsx</mete:hasName>
+  <mete:hasPath>C:\Irina\disser\Empirion_population_v2</mete:hasPath>
+</mete:Workbook>
+
+<mete:Sheet rdf:about="#sheet1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <mete:hasPart rdf:resource="#table1"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Toonto</rdfs:label>
+</mete:Sheet>
+
+<mete:Table rdf:about="#table1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <mete:hasPart rdf:resource="#column1"/>
+  <mete:hasPart rdf:resource="#column2"/>
+  <mete:hasPart rdf:resource="#column3"/>
+  <mete:hasPart rdf:resource="#column4"/>
+  <mete:hasPart rdf:resource="#column5"/>
+  <mete:hasPart rdf:resource="#column6"/>
+  <mete:hasPart rdf:resource="#column7"/>
+  <mete:hasPart rdf:resource="#column8"/>
+  <mete:hasPart rdf:resource="#column9"/>
+  <mete:hasPart rdf:resource="#column10"/>
+  <mete:hasPart rdf:resource="#column11"/>
+  <mete:hasPart rdf:resource="#column12"/>
+  <mete:hasPart rdf:resource="#column13"/>
+  <mete:hasPart rdf:resource="#column14"/>
+  <mete:hasPart rdf:resource="#column15"/>
+  <mete:hasPart rdf:resource="#column16"/>
+  <mete:hasPart rdf:resource="#column17"/>
+  <mete:hasPart rdf:resource="#column18"/>
+  <mete:hasPart rdf:resource="#column19"/>
+  <mete:hasPart rdf:resource="#column20"/>
+  <mete:hasPart rdf:resource="#column21"/>
+  <mete:hasPart rdf:resource="#column22"/>
+  <mete:hasPart rdf:resource="#column23"/>
+  <mete:hasPart rdf:resource="#column24"/>
+  <mete:hasPart rdf:resource="#column25"/>
+  <mete:hasPart rdf:resource="#column26"/>
+  <mete:hasPart rdf:resource="#column27"/>
+  <mete:hasPart rdf:resource="#column28"/>
+  <mete:hasPart rdf:resource="#column29"/>
+  <mete:hasPart rdf:resource="#column30"/>
+  <mete:hasPart rdf:resource="#column31"/>
+  <mete:hasPart rdf:resource="#column32"/>
+  <mete:hasPart rdf:resource="#column33"/>
+  <mete:hasPart rdf:resource="#column34"/>
+  <mete:hasPart rdf:resource="#column35"/>
+  <mete:hasPart rdf:resource="#column36"/>
+  <mete:hasPart rdf:resource="#column37"/>
+  <mete:hasPart rdf:resource="#column38"/>
+  <mete:hasPart rdf:resource="#column39"/>
+  <mete:hasPart rdf:resource="#column40"/>
+  <mete:hasPart rdf:resource="#column41"/>
+  <mete:hasPart rdf:resource="#column42"/>
+  <mete:hasPart rdf:resource="#column43"/>
+  <mete:hasPart rdf:resource="#column44"/>
+  <mete:hasPart rdf:resource="#column45"/>
+  <mete:hasPart rdf:resource="#column46"/>
+  <mete:hasPart rdf:resource="#column47"/>
+  <mete:hasPart rdf:resource="#column48"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">result</rdfs:label>
+</mete:Table>
+
+<mete:Column rdf:about="#column1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A2:A33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DataFile</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B2:B33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VariableDescription</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C2:C33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Variable</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D2:D33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Representation</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E2:E33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RepresentedValue</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column6">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F2:F33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MeasureUnits</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column7">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G2:G33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pictures</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column8">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H2:H33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StimulusCongruence</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column9">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">I2:I33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExperementTrialNumber</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column10">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J2:J33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ButtonPress</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column11">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K2:K33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResponseAccuracy</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column12">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L2:L33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResponseTime</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column13">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M2:M33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Letters</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column14">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">N2:N33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubjectNumber</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column15">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O2:O33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubjectAge</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column16">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2:P33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubjectSex</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column17">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q2:Q33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExperementBlockNumber</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column18">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R2:R33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StimulusValence</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column19">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S2:S33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubjectGroup</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column20">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T2:T33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubjectIntrinsicCharasteristics</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column21">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">U2:U33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StimulusCongruenceRepresentation</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column22">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">V2:V33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResponseTimeRepresentation</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column23">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W2:W33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubjectGroupRepresentation</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column24">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X2:X33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubjectIntrinsicCharasteristicsRepresentation</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column25">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y2:Y33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExperementBlockNumberRepresentation</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column26">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Z2:Z33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PicturesRepresentation</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column27">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AA2:AA33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResponseAccuracyRepresentation</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column28">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AB2:AB33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ButtonPressRepresentation</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column29">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AC2:AC33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LettersRepresentation</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column30">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AD2:AD33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubjectNumberRepresentation</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column31">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AE2:AE33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StimulusValenceRepresentation</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column32">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AF2:AF33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubjectSexRepresentation</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column33">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AG2:AG33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExperementTrialNumberRepresentation</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column34">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AH2:AH33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubjectAgeRepresentation</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column35">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AI2:AI33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StimulusCongruenceRepresentedVariable</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column36">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AJ2:AJ33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResponseTimeRepresentedVariable</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column37">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AK2:AK33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubjectGroupRepresentedVariable</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column38">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AL2:AL33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubjectIntrinsicCharasteristicsRepresentedVariable</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column39">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AM2:AM33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExperementBlockNumberRepresentedVariable</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column40">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AN2:AN33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PicturesRepresentedVariable</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column41">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AO2:AO33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResponseAccuracyRepresentedVariable</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column42">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AP2:AP33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ButtonPressRepresentedVariable</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column43">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AQ2:AQ33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LettersRepresentedVariable</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column44">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AR2:AR33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubjectNumberRepresentedVariable</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column45">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AS2:AS33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StimulusValenceRepresentedVariable</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column46">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AT2:AT33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubjectSexRepresentedVariable</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column47">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AU2:AU33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExperementTrialNumberRepresentedVariable</rdfs:label>
+</mete:Column>
+
+<mete:Column rdf:about="#column48">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AV2:AV33</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubjectAgeRepresentedVariable</rdfs:label>
+</mete:Column>
+
+<mete:Sheet rdf:about="#sheet2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RepresentedVariables</rdfs:label>
+</mete:Sheet>
+
+
+</rdf:RDF>
