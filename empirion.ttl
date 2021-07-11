@@ -10,38 +10,21 @@
 @base <http://www.tempuri.org/empirion> .
 
 <http://www.tempuri.org/empirion> rdf:type owl:Ontology ;
-                                   rdfs:seeAlso <https://www.researchgate.net/project/Development-of-the-knowledge-bases-from-empirical-research-datasets-ontological-approach-EMPIRION> ;
                                    rdfs:comment "The ontology for the desription of datasets obtained in experimental studies."@en ;
-                                   owl:versionInfo "Class hierarchy revised and flattened. Ontology reuse stile changed: for every reused class his clone was created in empirion namespace and original IRI became a value of rdfs:isDefinedBy property. Language tags added."@en .
+                                   rdfs:seeAlso <https://www.researchgate.net/project/Development-of-the-knowledge-bases-from-empirical-research-datasets-ontological-approach-EMPIRION> ;
+                                   owl:versionInfo "Minor additions: all the external semantics (e. g. from disco) is deleted; rdfs:isDefinedBy only applied to the direct import, rdfs:seeAlso for natural language definitions; references to dcat added and qudt added."@en .
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  http://rdf-vocabulary.ddialliance.org/discovery#basedOn
-disco:basedOn rdf:type owl:ObjectProperty ;
-              rdfs:domain empirion:Variable ;
-              rdfs:range empirion:RepresentedVariable ;
-              rdfs:comment "This property points to the RepresentedVariable the Variable is based on."@en ;
-              rdfs:isDefinedBy <http://rdf-vocabulary.ddialliance.org/discovery> ;
-              rdfs:label "based on"@en .
-
-
-###  http://rdf-vocabulary.ddialliance.org/discovery#representation
-disco:representation rdf:type owl:ObjectProperty ;
-                     rdfs:domain empirion:RepresentedVariable ;
-                     rdfs:range empirion:Representation ;
-                     rdfs:comment "RepresentedVariables and Variables can have a Representation. [This is not full discovery definition due to different approach applied in the Empirion ontology]"@en ;
-                     rdfs:isDefinedBy <http://rdf-vocabulary.ddialliance.org/discovery> ;
-                     rdfs:label "representation"@en .
-
-
-###  http://rdf-vocabulary.ddialliance.org/discovery#variable
-disco:variable rdf:type owl:ObjectProperty ;
-               owl:inverseOf empirion:containedIn ;
-               rdfs:isDefinedBy <http://rdf-vocabulary.ddialliance.org/discovery> ;
-               rdfs:label "This property indicates the Variable of a Study and points to Variable contained in the LogicalDataSet."@en ,
-                          "variable"@en .
+###  http://www.tempuri.org/empirion#basedOn
+empirion:basedOn rdf:type owl:ObjectProperty ;
+                 rdfs:domain empirion:Variable ;
+                 rdfs:range empirion:RepresentedVariable ;
+                 rdfs:comment "This property points to the RepresentedVariable the Variable is based on."@en ;
+                 rdfs:isDefinedBy disco:basedOn ;
+                 rdfs:label "based on"@en .
 
 
 ###  http://www.tempuri.org/empirion#connectedWith
@@ -53,6 +36,7 @@ empirion:connectedWith rdf:type owl:ObjectProperty ;
 
 ###  http://www.tempuri.org/empirion#containedIn
 empirion:containedIn rdf:type owl:ObjectProperty ;
+                     owl:inverseOf empirion:variable ;
                      rdfs:domain empirion:Variable ;
                      rdfs:range empirion:DataFile ;
                      rdfs:comment "Connect variable with a representation of data file in which the variable contained."@en ;
@@ -114,17 +98,30 @@ empirion:hasValueDomain rdf:type owl:ObjectProperty ;
                         rdfs:label "has value domain"@en .
 
 
+###  http://www.tempuri.org/empirion#representation
+empirion:representation rdf:type owl:ObjectProperty ;
+                        rdfs:comment "RepresentedVariables and Variables can have a Representation. [This is not full discovery definition due to different approach applied in the Empirion ontology]"@en ;
+                        rdfs:isDefinedBy disco:representation ;
+                        rdfs:label "representation"@en .
+
+
+###  http://www.tempuri.org/empirion#variable
+empirion:variable rdf:type owl:ObjectProperty ;
+                  rdfs:comment "This property indicates the Variable of a Study and points to Variable contained in the LogicalDataSet."@en ;
+                  rdfs:isDefinedBy disco:variable ;
+                  rdfs:label "variable"@en .
+
+
 #################################################################
 #    Classes
 #################################################################
 
-###  http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00049
-<http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00049> rdf:type owl:Class ;
-                                                            rdfs:subClassOf empirion:ExperimentProcedure ;
-                                                            rdfs:comment "Subclasses should be imported from CogPO."@en ,
-                                                                         "The class is referenced from CogPO ontology and contains 84 subclasses for different behavioral paradigms."@en ;
-                                                            rdfs:label "Behavioral Experimental Paradigm" ;
-                                                            rdfs:seeAlso <http://wiki.cogpo.org/index.php?title=Main_Page> .
+###  http://www.tempuri.org/empirion#BehavioralExperimentalParadigm
+empirion:BehavioralExperimentalParadigm rdf:type owl:Class ;
+                                        rdfs:subClassOf empirion:ExperimentProcedure ;
+                                        rdfs:comment "The class is referenced from CogPO ontology and contains 84 subclasses for different behavioral paradigms."@en ;
+                                        rdfs:isDefinedBy <http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00049> ;
+                                        rdfs:label "Behavioral Experimental Paradigm" .
 
 
 ###  http://www.tempuri.org/empirion#ButtonPress
@@ -201,8 +198,8 @@ empirion:CovertResponseRepresentedVariable rdf:type owl:Class ;
 ###  http://www.tempuri.org/empirion#DataFile
 empirion:DataFile rdf:type owl:Class ;
                   rdfs:subClassOf empirion:DataRepresentation ;
-                  rdfs:comment "The class DataFile, which is also a dcmitype:Dataset, represents all the data files containing the microdata datasets."@en ;
-                  rdfs:isDefinedBy <http://rdf-vocabulary.ddialliance.org/discovery> ;
+                  rdfs:comment "A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above)."@en ;
+                  rdfs:isDefinedBy <http://www.w3.org/ns/dcat#Distribution> ;
                   rdfs:label "Data File"@en .
 
 
@@ -210,6 +207,14 @@ empirion:DataFile rdf:type owl:Class ;
 empirion:DataRepresentation rdf:type owl:Class ;
                             rdfs:comment "Representation of the data in material world."@en ;
                             rdfs:label "Data Representation"@en .
+
+
+###  http://www.tempuri.org/empirion#DataSet
+empirion:DataSet rdf:type owl:Class ;
+                 rdfs:subClassOf empirion:DataRepresentation ;
+                 rdfs:comment "A collection of data, published or curated by a single source, and available for access or download in one or more represenations."@en ;
+                 rdfs:isDefinedBy <http://www.w3.org/ns/dcat#Dataset> ;
+                 rdfs:label "Data Set"@en .
 
 
 ###  http://www.tempuri.org/empirion#Digit
@@ -303,8 +308,8 @@ empirion:ExperementTrialNumberRepresentedVariable rdf:type owl:Class ;
 ###  http://www.tempuri.org/empirion#ExperimentCharacteristic
 empirion:ExperimentCharacteristic rdf:type owl:Class ;
                                   rdfs:comment "Characteristics of an experiment. Experiment is a series of observations conducted under controlled conditions to study a relationship with the purpose of drawing causal inferences about that relationship. An experiment involves the manipulation of an independent variable, the measurement of a dependent variable, and the exposure of various participants to one or more of the conditions being studied. Random selection of participants and their random assignment to conditions also are necessary in experiments."@en ;
-                                  rdfs:isDefinedBy <https://dictionary.apa.org/experiment> ;
-                                  rdfs:label "Experiment Characteristic"@en .
+                                  rdfs:label "Experiment Characteristic"@en ;
+                                  rdfs:seeAlso <https://dictionary.apa.org/experiment> .
 
 
 ###  http://www.tempuri.org/empirion#ExperimentNumber
@@ -448,16 +453,8 @@ empirion:MeasurementScale rdf:type owl:Class ;
 empirion:MeasurementUnit rdf:type owl:Class ;
                          rdfs:subClassOf empirion:VariableSensemaker ;
                          rdfs:comment "Similar to GSIM Unit Type and iao measurement unit label."@en ;
+                         rdfs:isDefinedBy <http://qudt.org/2.1/vocab/unit> ;
                          rdfs:label "Measurement Unit"@en .
-
-
-###  http://www.tempuri.org/empirion#MeasurementValue
-empirion:MeasurementValue rdf:type owl:Class ;
-                          rdfs:subClassOf empirion:VariableSensemaker ;
-                          rdfs:comment "An abstract class denoting a value derived from a specific measurement of a specific variable."@en ,
-                                       "Subclasses should be imported from OoEVV."@en ;
-                          rdfs:isDefinedBy <http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.value.MeasurementValue> ;
-                          rdfs:label "Measurement Value"@en .
 
 
 ###  http://www.tempuri.org/empirion#MetadataFile
@@ -647,7 +644,6 @@ empirion:ResponseTimeRepresentedVariable rdf:type owl:Class ;
 empirion:Stimulus rdf:type owl:Class ;
                   rdfs:subClassOf empirion:Variable ;
                   rdfs:comment "The  object or set of objects, internal or external to the subject, which is intended to generate either an overt or covert response in the subject as part of an experimental condition."@en ;
-                  rdfs:isDefinedBy <http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00122> ;
                   rdfs:label "Stimulus"@en ;
                   rdfs:seeAlso <http://wiki.cogpo.org/index.php?title=Stimulus> .
 
@@ -734,8 +730,7 @@ empirion:StimulusModality rdf:type owl:Class ;
                           rdfs:comment "The class contains other subclasses that can be also added from CogPO ontology."@en ,
                                        "The quality of the sensory perception of an explicit stimulus."@en ;
                           rdfs:isDefinedBy <http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00124> ;
-                          rdfs:label "Stimulus Modality"@en ;
-                          rdfs:seeAlso <http://wiki.cogpo.org/index.php?title=Implicit_Stimulus> .
+                          rdfs:label "Stimulus Modality"@en .
 
 
 ###  http://www.tempuri.org/empirion#StimulusModalityRepresentation
@@ -1015,7 +1010,7 @@ empirion:ValueDomain rdf:type owl:Class ;
 ###  http://www.tempuri.org/empirion#Variable
 empirion:Variable rdf:type owl:Class ;
                   rdfs:comment "Variables provide a definition of the column in a rectangular data file. Variable is a characteristic of a unit being observed. A variable might be the answer of a question, have an administrative source, or be derived from other variables."@en ;
-                  rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000367> ;
+                  rdfs:isDefinedBy disco:Variable ;
                   rdfs:label "Variable"@en ;
                   rdfs:seeAlso <https://rdf-vocabulary.ddialliance.org/discovery.html#dfn-disco-variable> .
 
@@ -1117,4 +1112,4 @@ empirion:TargetStimulus rdf:type owl:NamedIndividual ,
                         rdfs:label "Target Stimulus"@en .
 
 
-###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
