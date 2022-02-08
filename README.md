@@ -2,7 +2,7 @@ Empirion omtology for the description of data from the behavioral expetiments an
 Current working versions (February 2022):
 - empirion_v3.2 with referencing of the other ontologies;
 - empirion_v4 with direct import of the other ontologies.
-These versions are the same with the exception of other ontologies reuse style.
+These versions are the same with the exception of other ontologies reuse style. The file empirion.ttl is the same that v3.2.
 
 The project's page and publications: https://www.researchgate.net/project/Development-of-the-knowledge-bases-from-empirical-research-datasets-ontological-approach-EMPIRION
 
@@ -11,6 +11,6 @@ The project's page and publications: https://www.researchgate.net/project/Develo
 Текущие актуальные версии онтологии (февраль 2022):
 - empirion_v3.2 с референсированием сторонних онтологий;
 - empirion_v4 с прямым импортом используемых онтологий.
-Данные версии аналогичны друг другу за исключением стиля повторного использования других онтологических ресурсов.
+Данные версии аналогичны друг другу за исключением стиля повторного использования других онтологических ресурсов. Файл empirion.ttl соответстует v3.2.
 
 Страница проекта и публикации по проекту: https://www.researchgate.net/project/Development-of-the-knowledge-bases-from-empirical-research-datasets-ontological-approach-EMPIRION
