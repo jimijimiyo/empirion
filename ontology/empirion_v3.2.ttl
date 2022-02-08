@@ -1,0 +1,1115 @@
+@prefix : <http://www.tempuri.org/empirion#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
+@prefix empirion: <http://www.tempuri.org/empirion#> .
+@base <http://www.tempuri.org/empirion> .
+
+<http://www.tempuri.org/empirion> rdf:type owl:Ontology ;
+                                   rdfs:comment "The ontology for the desription of datasets obtained in experimental studies."@en ;
+                                   rdfs:seeAlso <https://www.researchgate.net/project/Development-of-the-knowledge-bases-from-empirical-research-datasets-ontological-approach-EMPIRION> ;
+                                   owl:versionInfo "Minor additions: all the external semantics (e. g. from disco) is deleted; rdfs:isDefinedBy only applied to the direct import, rdfs:seeAlso for natural language definitions; references to dcat added and qudt added."@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.tempuri.org/empirion#basedOn
+empirion:basedOn rdf:type owl:ObjectProperty ;
+                 rdfs:domain empirion:Variable ;
+                 rdfs:range empirion:RepresentedVariable ;
+                 rdfs:comment "This property points to the RepresentedVariable the Variable is based on."@en ;
+                 rdfs:isDefinedBy disco:basedOn ;
+                 rdfs:label "based on"@en .
+
+
+###  http://www.tempuri.org/empirion#connectedWith
+empirion:connectedWith rdf:type owl:ObjectProperty ;
+                       rdfs:domain empirion:Variable ;
+                       rdfs:range empirion:Variable ;
+                       rdfs:comment "A group of properties for connections of variables inside the dataset."@en .
+
+
+###  http://www.tempuri.org/empirion#containedIn
+empirion:containedIn rdf:type owl:ObjectProperty ;
+                     owl:inverseOf empirion:variable ;
+                     rdfs:domain empirion:Variable ;
+                     rdfs:range empirion:DataFile ;
+                     rdfs:comment "Connect variable with a representation of data file in which the variable contained."@en ;
+                     rdfs:label "contained in"@en .
+
+
+###  http://www.tempuri.org/empirion#derivedFrom
+empirion:derivedFrom rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf empirion:connectedWith ;
+                     rdfs:comment "Connection of derived variable with correspondig raw variable."@en .
+
+
+###  http://www.tempuri.org/empirion#hasMeasurement_Value
+empirion:hasMeasurement_Value rdf:type owl:ObjectProperty ;
+                              rdfs:comment "For connection of Representation with its Measurement Value."@en ;
+                              rdfs:label "has measurement value"@en .
+
+
+###  http://www.tempuri.org/empirion#hasResponseCharacteristics
+empirion:hasResponseCharacteristics rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf empirion:connectedWith ;
+                                    rdfs:domain empirion:Response ;
+                                    rdfs:range empirion:ResponseCharacteristic ;
+                                    rdfs:comment "A set of properties for connection of Response with its Response Characteristics. Should be extended with respect to the other characteristics." .
+
+
+###  http://www.tempuri.org/empirion#hasResponseRole
+empirion:hasResponseRole rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf empirion:connectedWith ;
+                         rdfs:domain empirion:Response ;
+                         rdfs:range empirion:ResponseRole .
+
+
+###  http://www.tempuri.org/empirion#hasStimulusCharacteristics
+empirion:hasStimulusCharacteristics rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf empirion:connectedWith ;
+                                    rdfs:domain empirion:Stimulus ;
+                                    rdfs:range empirion:StimulusCharacteristic ;
+                                    rdfs:comment "A set of properties for connection of Stimulus with its Stimulus Characteristics. Should be extended with respect to the other characteristics." .
+
+
+###  http://www.tempuri.org/empirion#hasStimulusModality
+empirion:hasStimulusModality rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf empirion:hasStimulusCharacteristics ;
+                             rdfs:domain empirion:Stimulus ;
+                             rdfs:range empirion:StimulusModality .
+
+
+###  http://www.tempuri.org/empirion#hasStimulusRole
+empirion:hasStimulusRole rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf empirion:connectedWith ;
+                         rdfs:domain empirion:Stimulus ;
+                         rdfs:range empirion:StimulusRole .
+
+
+###  http://www.tempuri.org/empirion#hasValueDomain
+empirion:hasValueDomain rdf:type owl:ObjectProperty ;
+                        rdfs:comment "For connection of a Represented Variable with its Value Domain."@en ;
+                        rdfs:label "has value domain"@en .
+
+
+###  http://www.tempuri.org/empirion#representation
+empirion:representation rdf:type owl:ObjectProperty ;
+                        rdfs:comment "RepresentedVariables and Variables can have a Representation. [This is not full discovery definition due to different approach applied in the Empirion ontology]"@en ;
+                        rdfs:isDefinedBy disco:representation ;
+                        rdfs:label "representation"@en .
+
+
+###  http://www.tempuri.org/empirion#variable
+empirion:variable rdf:type owl:ObjectProperty ;
+                  rdfs:comment "This property indicates the Variable of a Study and points to Variable contained in the LogicalDataSet."@en ;
+                  rdfs:isDefinedBy disco:variable ;
+                  rdfs:label "variable"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.tempuri.org/empirion#BehavioralExperimentalParadigm
+empirion:BehavioralExperimentalParadigm rdf:type owl:Class ;
+                                        rdfs:subClassOf empirion:ExperimentProcedure ;
+                                        rdfs:comment "The class is referenced from CogPO ontology and contains 84 subclasses for different behavioral paradigms."@en ;
+                                        rdfs:isDefinedBy <http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00049> ;
+                                        rdfs:label "Behavioral Experimental Paradigm" .
+
+
+###  http://www.tempuri.org/empirion#ButtonPress
+empirion:ButtonPress rdf:type owl:Class ;
+                     rdfs:subClassOf empirion:OvertResponse ;
+                     rdfs:comment "The class contains other subclasses that can be also added from CogPO ontology."@en ;
+                     rdfs:isDefinedBy <http://www.cogpo.org/ontologieButton_Press> ;
+                     rdfs:label "Button Press"@en .
+
+
+###  http://www.tempuri.org/empirion#ButtonPressRepresentation
+empirion:ButtonPressRepresentation rdf:type owl:Class ;
+                                   rdfs:subClassOf empirion:OvertResponseRepresentation .
+
+
+###  http://www.tempuri.org/empirion#ButtonPressRepresentedVariable
+empirion:ButtonPressRepresentedVariable rdf:type owl:Class ;
+                                        rdfs:subClassOf empirion:OvertResponseRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#Character
+empirion:Character rdf:type owl:Class ;
+                   rdfs:subClassOf empirion:ExplicitStimulus ;
+                   rdfs:comment "Stimulus consisted of the written signs (letters, numbers, signs, etc.)"@en ;
+                   rdfs:label "Character"@en .
+
+
+###  http://www.tempuri.org/empirion#CharactersRepresentation
+empirion:CharactersRepresentation rdf:type owl:Class ;
+                                  rdfs:subClassOf empirion:ExplicitStimulusRepresentation .
+
+
+###  http://www.tempuri.org/empirion#CharactersRepresentedVariable
+empirion:CharactersRepresentedVariable rdf:type owl:Class ;
+                                       rdfs:subClassOf empirion:ExplicitStimulusRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#CorrectResponse
+empirion:CorrectResponse rdf:type owl:Class ;
+                         rdfs:subClassOf empirion:Variable ;
+                         rdfs:comment "This is a descriptive variable that contains correct response for the corresponding stimulus."@en ;
+                         rdfs:label "Correct Response"@en .
+
+
+###  http://www.tempuri.org/empirion#CorrectResponseRepresentation
+empirion:CorrectResponseRepresentation rdf:type owl:Class ;
+                                       rdfs:subClassOf empirion:Representation .
+
+
+###  http://www.tempuri.org/empirion#CorrectResponseRepresentedVariable
+empirion:CorrectResponseRepresentedVariable rdf:type owl:Class ;
+                                            rdfs:subClassOf empirion:RepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#CovertResponse
+empirion:CovertResponse rdf:type owl:Class ;
+                        rdfs:subClassOf empirion:Response ;
+                        rdfs:comment "A covert response is a Response made internal to the body, which is unobservable by external viewers."@en ;
+                        rdfs:isDefinedBy <http://www.cogpo.org/ontologies/CogPOver2010.owl#COGPO_00176> ;
+                        rdfs:label "Covert Response"@en ;
+                        rdfs:seeAlso <http://wiki.cogpo.org/index.php?title=Covert_Response> .
+
+
+###  http://www.tempuri.org/empirion#CovertResponseRepresentation
+empirion:CovertResponseRepresentation rdf:type owl:Class ;
+                                      rdfs:subClassOf empirion:ResponseRepresentation .
+
+
+###  http://www.tempuri.org/empirion#CovertResponseRepresentedVariable
+empirion:CovertResponseRepresentedVariable rdf:type owl:Class ;
+                                           rdfs:subClassOf empirion:ResponseRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#DataFile
+empirion:DataFile rdf:type owl:Class ;
+                  rdfs:subClassOf empirion:DataRepresentation ;
+                  rdfs:comment "A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above)."@en ;
+                  rdfs:isDefinedBy <http://www.w3.org/ns/dcat#Distribution> ;
+                  rdfs:label "Data File"@en .
+
+
+###  http://www.tempuri.org/empirion#DataRepresentation
+empirion:DataRepresentation rdf:type owl:Class ;
+                            rdfs:comment "Representation of the data in material world."@en ;
+                            rdfs:label "Data Representation"@en .
+
+
+###  http://www.tempuri.org/empirion#DataSet
+empirion:DataSet rdf:type owl:Class ;
+                 rdfs:subClassOf empirion:DataRepresentation ;
+                 rdfs:comment "A collection of data, published or curated by a single source, and available for access or download in one or more represenations."@en ;
+                 rdfs:isDefinedBy <http://www.w3.org/ns/dcat#Dataset> ;
+                 rdfs:label "Data Set"@en .
+
+
+###  http://www.tempuri.org/empirion#Digit
+empirion:Digit rdf:type owl:Class ;
+               rdfs:subClassOf empirion:Character ;
+               rdfs:isDefinedBy <http://www.cogpo.org/ontologies/COGPO_00162> ;
+               rdfs:label "Digit"@en .
+
+
+###  http://www.tempuri.org/empirion#DigitsRepresentation
+empirion:DigitsRepresentation rdf:type owl:Class ;
+                              rdfs:subClassOf empirion:CharactersRepresentation .
+
+
+###  http://www.tempuri.org/empirion#DigitsRepresentedVariable
+empirion:DigitsRepresentedVariable rdf:type owl:Class ;
+                                   rdfs:subClassOf empirion:CharactersRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#ExperementBlockCharacteristic
+empirion:ExperementBlockCharacteristic rdf:type owl:Class ;
+                                       rdfs:subClassOf empirion:ExperimentPartCharacteristic ;
+                                       rdfs:comment "\"Block design\" is a type of research study in which participants are divided into relatively homogeneous subsets (blocks) from which they are assigned to the experimental or treatment conditions. For example, in a simple block design to evaluate the efficacy of several antidepressants, participants with similar pretest depression scores might be grouped into homogeneous blocks and then assigned to receive different medications. The purpose of a block design is to ensure that a characteristic of the study participants that is related to the target outcome (i.e., a covariate) is distributed equally across treatment conditions."@en ,
+                                                    "An experiment may consist of several parts which are often called \"blocks\"."@en ;
+                                       rdfs:label "Experement Block Characteristic"@en ;
+                                       rdfs:seeAlso <https://dictionary.apa.org/block-design> .
+
+
+###  http://www.tempuri.org/empirion#ExperementBlockCharacteristicRepresentation
+empirion:ExperementBlockCharacteristicRepresentation rdf:type owl:Class ;
+                                                     rdfs:subClassOf empirion:ExperimentPartCharacteristicRepresentation .
+
+
+###  http://www.tempuri.org/empirion#ExperementBlockCharacteristicRepresentedVariable
+empirion:ExperementBlockCharacteristicRepresentedVariable rdf:type owl:Class ;
+                                                          rdfs:subClassOf empirion:ExperimentPartCharacteristicRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#ExperementBlockNumber
+empirion:ExperementBlockNumber rdf:type owl:Class ;
+                               rdfs:subClassOf empirion:ExperementBlockCharacteristic ;
+                               rdfs:comment "Number of the experiment block."@en ;
+                               rdfs:label "Experement Block Number"@en .
+
+
+###  http://www.tempuri.org/empirion#ExperementBlockNumberRepresentation
+empirion:ExperementBlockNumberRepresentation rdf:type owl:Class ;
+                                             rdfs:subClassOf empirion:ExperementBlockCharacteristicRepresentation .
+
+
+###  http://www.tempuri.org/empirion#ExperementBlockNumberRepresentedVariable
+empirion:ExperementBlockNumberRepresentedVariable rdf:type owl:Class ;
+                                                  rdfs:subClassOf empirion:ExperementBlockCharacteristicRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#ExperementTrialCharacterictic
+empirion:ExperementTrialCharacterictic rdf:type owl:Class ;
+                                       rdfs:subClassOf empirion:ExperimentPartCharacteristic ;
+                                       rdfs:comment "Trial. In testing, conditioning, or other experimentation, a single performance of a given task (e.g., one run through a maze) or a single presentation of a stimulus (e.g., one viewing of an ordered list of three-letter words)."@en ;
+                                       rdfs:label "Experement Trial Characterictic"@en ;
+                                       rdfs:seeAlso <https://dictionary.apa.org/trial> .
+
+
+###  http://www.tempuri.org/empirion#ExperementTrialCharactericticRepresentation
+empirion:ExperementTrialCharactericticRepresentation rdf:type owl:Class ;
+                                                     rdfs:subClassOf empirion:ExperimentPartCharacteristicRepresentation .
+
+
+###  http://www.tempuri.org/empirion#ExperementTrialCharactericticRepresentedVariable
+empirion:ExperementTrialCharactericticRepresentedVariable rdf:type owl:Class ;
+                                                          rdfs:subClassOf empirion:ExperimentPartCharacteristicRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#ExperementTrialNumber
+empirion:ExperementTrialNumber rdf:type owl:Class ;
+                               rdfs:subClassOf empirion:ExperementTrialCharacterictic ;
+                               rdfs:comment "Number of the trial."@en ;
+                               rdfs:label "Experement Trial Number"@en .
+
+
+###  http://www.tempuri.org/empirion#ExperementTrialNumberRepresentation
+empirion:ExperementTrialNumberRepresentation rdf:type owl:Class ;
+                                             rdfs:subClassOf empirion:ExperementTrialCharactericticRepresentation .
+
+
+###  http://www.tempuri.org/empirion#ExperementTrialNumberRepresentedVariable
+empirion:ExperementTrialNumberRepresentedVariable rdf:type owl:Class ;
+                                                  rdfs:subClassOf empirion:ExperementTrialCharactericticRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#ExperimentCharacteristic
+empirion:ExperimentCharacteristic rdf:type owl:Class ;
+                                  rdfs:comment "Characteristics of an experiment. Experiment is a series of observations conducted under controlled conditions to study a relationship with the purpose of drawing causal inferences about that relationship. An experiment involves the manipulation of an independent variable, the measurement of a dependent variable, and the exposure of various participants to one or more of the conditions being studied. Random selection of participants and their random assignment to conditions also are necessary in experiments."@en ;
+                                  rdfs:label "Experiment Characteristic"@en ;
+                                  rdfs:seeAlso <https://dictionary.apa.org/experiment> .
+
+
+###  http://www.tempuri.org/empirion#ExperimentNumber
+empirion:ExperimentNumber rdf:type owl:Class ;
+                          rdfs:subClassOf empirion:ExperimentCharacteristic ;
+                          rdfs:comment "Number or ID (identifier) of the experiment in the connected paper or report."@en ;
+                          rdfs:label "Experiment Number"@en .
+
+
+###  http://www.tempuri.org/empirion#ExperimentPartCharacteristic
+empirion:ExperimentPartCharacteristic rdf:type owl:Class ;
+                                      rdfs:subClassOf empirion:Variable ;
+                                      rdfs:comment "Characteristics of the parts of the experiment."@en ;
+                                      rdfs:label "Experiment Part Characteristic"@en .
+
+
+###  http://www.tempuri.org/empirion#ExperimentPartCharacteristicRepresentation
+empirion:ExperimentPartCharacteristicRepresentation rdf:type owl:Class ;
+                                                    rdfs:subClassOf empirion:Representation .
+
+
+###  http://www.tempuri.org/empirion#ExperimentPartCharacteristicRepresentedVariable
+empirion:ExperimentPartCharacteristicRepresentedVariable rdf:type owl:Class ;
+                                                         rdfs:subClassOf empirion:RepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#ExperimentProcedure
+empirion:ExperimentProcedure rdf:type owl:Class ;
+                             rdfs:subClassOf empirion:ExperimentCharacteristic ;
+                             rdfs:comment "A procedure that experiment is followed."@en ;
+                             rdfs:label "Experiment Procedure"@en .
+
+
+###  http://www.tempuri.org/empirion#ExperimentSetting
+empirion:ExperimentSetting rdf:type owl:Class ;
+                           rdfs:subClassOf empirion:ExperimentCharacteristic ;
+                           rdfs:comment "Experimantal conditions (characteristics of the evironment in which the experiment was conducted)."@en ;
+                           rdfs:label "Experiment Setting"@en .
+
+
+###  http://www.tempuri.org/empirion#ExplicitStimulus
+empirion:ExplicitStimulus rdf:type owl:Class ;
+                          rdfs:subClassOf empirion:Stimulus ;
+                          rdfs:comment "A stimulus which exists at least in part externally to the subject - e.g., a flashing checkerboard, a drop of juice, a set of digits, an electrical charge, etc."@en ,
+                                       "The class contains other subclasses that can be also added from CogPO ontology."@en ;
+                          rdfs:isDefinedBy <http://www.cogpo.org/ontologies/CogPOver2010.owl#COGPO_00177> ;
+                          rdfs:label "Explicit Stimulus"@en ;
+                          rdfs:seeAlso <http://wiki.cogpo.org/index.php?title=Explicit_Stimulus> .
+
+
+###  http://www.tempuri.org/empirion#ExplicitStimulusRepresentation
+empirion:ExplicitStimulusRepresentation rdf:type owl:Class ;
+                                        rdfs:subClassOf empirion:StimulusRepresentation .
+
+
+###  http://www.tempuri.org/empirion#ExplicitStimulusRepresentedVariable
+empirion:ExplicitStimulusRepresentedVariable rdf:type owl:Class ;
+                                             rdfs:subClassOf empirion:StimulusRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#Face
+empirion:Face rdf:type owl:Class ;
+              rdfs:subClassOf empirion:ExplicitStimulus ;
+              rdfs:isDefinedBy <http://www.cogpo.org/ontologies/COGPO_00154> ;
+              rdfs:label "Face"@en .
+
+
+###  http://www.tempuri.org/empirion#FacesRepresentation
+empirion:FacesRepresentation rdf:type owl:Class ;
+                             rdfs:subClassOf empirion:ExplicitStimulusRepresentation .
+
+
+###  http://www.tempuri.org/empirion#FacesRepresentedVariable
+empirion:FacesRepresentedVariable rdf:type owl:Class ;
+                                  rdfs:subClassOf empirion:ExplicitStimulusRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#ImplicitStimulus
+empirion:ImplicitStimulus rdf:type owl:Class ;
+                          rdfs:subClassOf empirion:Stimulus ;
+                          rdfs:comment "A stimulus generated internally by the subject - e.g., resting with eyes closed, imaging a scene, re-living an experience, etc."@en ;
+                          rdfs:isDefinedBy <http://www.cogpo.org/ontologies/CogPOver2010.owl#COGPO_00178> ;
+                          rdfs:label "Implicit Stimulus"@en ;
+                          rdfs:seeAlso <http://wiki.cogpo.org/index.php?title=Implicit_Stimulus> .
+
+
+###  http://www.tempuri.org/empirion#ImplicitStimulusRepresentation
+empirion:ImplicitStimulusRepresentation rdf:type owl:Class ;
+                                        rdfs:subClassOf empirion:StimulusRepresentation .
+
+
+###  http://www.tempuri.org/empirion#ImplicitStimulusRepresentedVariable
+empirion:ImplicitStimulusRepresentedVariable rdf:type owl:Class ;
+                                             rdfs:subClassOf empirion:StimulusRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#Instruction
+empirion:Instruction rdf:type owl:Class ;
+                     rdfs:subClassOf empirion:ExperimentCharacteristic ;
+                     rdfs:comment "Instructions are the information-bearing entity that sets up the rules for desired behavior from the subjects. An explicit direction that guides the behavior of the subject during the experimental conditions."@en ,
+                                  "The class contains other subclasses that can be also added from CogPO ontology."@en ;
+                     rdfs:isDefinedBy <http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00028> ;
+                     rdfs:label "Instruction"@en ;
+                     rdfs:seeAlso <http://wiki.cogpo.org/index.php?title=Instructions> .
+
+
+###  http://www.tempuri.org/empirion#Letter
+empirion:Letter rdf:type owl:Class ;
+                rdfs:subClassOf empirion:Character ;
+                rdfs:isDefinedBy <http://www.cogpo.org/ontologies/COGPO_00163> ;
+                rdfs:label "Letter"@en .
+
+
+###  http://www.tempuri.org/empirion#LettersRepresentation
+empirion:LettersRepresentation rdf:type owl:Class ;
+                               rdfs:subClassOf empirion:CharactersRepresentation .
+
+
+###  http://www.tempuri.org/empirion#LettersRepresentedVariable
+empirion:LettersRepresentedVariable rdf:type owl:Class ;
+                                    rdfs:subClassOf empirion:CharactersRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#LicenseFile
+empirion:LicenseFile rdf:type owl:Class ;
+                     rdfs:subClassOf empirion:MetadataFile ;
+                     rdfs:comment "The file with a license. Instances of the class are pathes to the corresponding files."@en ;
+                     rdfs:label "License File"@en .
+
+
+###  http://www.tempuri.org/empirion#MeasurementScale
+empirion:MeasurementScale rdf:type owl:Class ;
+                          rdfs:subClassOf empirion:VariableSensemaker ;
+                          rdfs:comment "An abstract class (that cannot itself be instantiated) that denotes the mathematical properties of values associated with specific variables. The measurement scale denotes the data properties of the measurement but does not itself denote the quality that the variable is measuring. Each scale provides characteristics of a set of values that associated with variables."@en ,
+                                       "Subclasses should be imported from OoEVV."@en ;
+                          rdfs:isDefinedBy <http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale> ;
+                          rdfs:label "Measurement Scale"@en .
+
+
+###  http://www.tempuri.org/empirion#MeasurementUnit
+empirion:MeasurementUnit rdf:type owl:Class ;
+                         rdfs:subClassOf empirion:VariableSensemaker ;
+                         rdfs:comment "Similar to GSIM Unit Type and iao measurement unit label."@en ;
+                         rdfs:isDefinedBy <http://qudt.org/2.1/vocab/unit> ;
+                         rdfs:label "Measurement Unit"@en .
+
+
+###  http://www.tempuri.org/empirion#MetadataFile
+empirion:MetadataFile rdf:type owl:Class ;
+                      rdfs:subClassOf empirion:DataRepresentation ;
+                      rdfs:comment "The files with metadata about the data set. Instances of the class are pathes to the corresponding files."@en ;
+                      rdfs:label "Metadata File"@en .
+
+
+###  http://www.tempuri.org/empirion#OvertResponse
+empirion:OvertResponse rdf:type owl:Class ;
+                       rdfs:subClassOf empirion:Response ;
+                       rdfs:comment "An overt response is a Response made with a body part that is externally observable by others."@en ,
+                                    "The class contains other subclasses that can be also added from CogPO ontology."@en ;
+                       rdfs:isDefinedBy <http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00136> ;
+                       rdfs:label "Overt Response"@en ;
+                       rdfs:seeAlso <http://wiki.cogpo.org/index.php?title=Overt_Response> .
+
+
+###  http://www.tempuri.org/empirion#OvertResponseRepresentation
+empirion:OvertResponseRepresentation rdf:type owl:Class ;
+                                     rdfs:subClassOf empirion:ResponseRepresentation .
+
+
+###  http://www.tempuri.org/empirion#OvertResponseRepresentedVariable
+empirion:OvertResponseRepresentedVariable rdf:type owl:Class ;
+                                          rdfs:subClassOf empirion:ResponseRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#Picture
+empirion:Picture rdf:type owl:Class ;
+                 rdfs:subClassOf empirion:ExplicitStimulus ;
+                 rdfs:isDefinedBy <http://www.cogpo.org/ontologies/COGPO_00172> ;
+                 rdfs:label "Picture"@en .
+
+
+###  http://www.tempuri.org/empirion#PicturesRepresentation
+empirion:PicturesRepresentation rdf:type owl:Class ;
+                                rdfs:subClassOf empirion:ExplicitStimulusRepresentation .
+
+
+###  http://www.tempuri.org/empirion#PicturesRepresentedVariable
+empirion:PicturesRepresentedVariable rdf:type owl:Class ;
+                                     rdfs:subClassOf empirion:ExplicitStimulusRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#Representation
+empirion:Representation rdf:type owl:Class ;
+                        rdfs:comment "The Representation of a variable is the combination of a value domain, datatype, and, if necessary, a unit of measure or a character set."@en ;
+                        rdfs:isDefinedBy disco:Representation ;
+                        rdfs:label "Representation"@en ;
+                        rdfs:seeAlso <https://rdf-vocabulary.ddialliance.org/discovery.html#dfn-disco-representation> .
+
+
+###  http://www.tempuri.org/empirion#RepresentationValue
+empirion:RepresentationValue rdf:type owl:Class ;
+                             rdfs:subClassOf empirion:VariableSensemaker ;
+                             rdfs:label "Representation Value"@en .
+
+
+###  http://www.tempuri.org/empirion#RepresentedVariable
+empirion:RepresentedVariable rdf:type owl:Class ;
+                             rdfs:comment "Represented Variables encompasse study-independent, re-usable parts of variables like occupation classification."@en ;
+                             rdfs:isDefinedBy disco:RepresentedVariable ;
+                             rdfs:label "Represented Variable"@en ;
+                             rdfs:seeAlso <https://rdf-vocabulary.ddialliance.org/discovery.html#dfn-disco-representedvariable> .
+
+
+###  http://www.tempuri.org/empirion#RepresentedVariableValue
+empirion:RepresentedVariableValue rdf:type owl:Class ;
+                                  rdfs:subClassOf empirion:VariableSensemaker ;
+                                  rdfs:label "Represented Variable Value"@en .
+
+
+###  http://www.tempuri.org/empirion#Response
+empirion:Response rdf:type owl:Class ;
+                  rdfs:subClassOf empirion:Variable ;
+                  rdfs:comment "The overt or covert behavior which is elicited from the subject in an experimental condition."@en ;
+                  rdfs:isDefinedBy <http://www.cogpo.org/ontologies/CogPOver2010.owl#COGPO_00175> ;
+                  rdfs:label "Response"@en ;
+                  rdfs:seeAlso <http://wiki.cogpo.org/index.php?title=Response> .
+
+
+###  http://www.tempuri.org/empirion#ResponseAccuracy
+empirion:ResponseAccuracy rdf:type owl:Class ;
+                          rdfs:subClassOf empirion:ResponseCharacteristic ;
+                          rdfs:comment "Accuracy is a measure of performance on a task, usually defined as the proportion of correct responses."@en ;
+                          rdfs:label "Response Accuracy"@en ;
+                          rdfs:seeAlso <https://dictionary.apa.org/accuracy> .
+
+
+###  http://www.tempuri.org/empirion#ResponseAccuracyRepresentation
+empirion:ResponseAccuracyRepresentation rdf:type owl:Class ;
+                                        rdfs:subClassOf empirion:ResponseCharacteristicRepresentation .
+
+
+###  http://www.tempuri.org/empirion#ResponseAccuracyRepresentedVariable
+empirion:ResponseAccuracyRepresentedVariable rdf:type owl:Class ;
+                                             rdfs:subClassOf empirion:ResponseCharacteristicRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#ResponseCharacteristic
+empirion:ResponseCharacteristic rdf:type owl:Class ;
+                                rdfs:subClassOf empirion:Variable ;
+                                rdfs:comment "Characteristics of the response. Responce is any glandular, muscular, neural, or other reaction to a stimulus. A response is a clearly defined, measurable unit of behavior discussed in terms of its result (e.g., pressing a lever, indicating yes vs. no on a survey item) or its physical characteristics (e.g., raising an arm)."@en ;
+                                rdfs:label "Response Characteristic"@en ;
+                                rdfs:seeAlso <https://dictionary.apa.org/response> .
+
+
+###  http://www.tempuri.org/empirion#ResponseCharacteristicRepresentation
+empirion:ResponseCharacteristicRepresentation rdf:type owl:Class ;
+                                              rdfs:subClassOf empirion:Representation .
+
+
+###  http://www.tempuri.org/empirion#ResponseCharacteristicRepresentedVariable
+empirion:ResponseCharacteristicRepresentedVariable rdf:type owl:Class ;
+                                                   rdfs:subClassOf empirion:RepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#ResponseModality
+empirion:ResponseModality rdf:type owl:Class ;
+                          rdfs:subClassOf empirion:ResponseCharacteristic ;
+                          rdfs:comment "How the response to the stimulus was given (i.e., with hand, or more pricisely with right middle finger). The CogPO creators used corresponding FMA ontology classes."@en ;
+                          rdfs:isDefinedBy <http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00119> ;
+                          rdfs:label "Response Modality"@en ;
+                          rdfs:seeAlso <http://wiki.cogpo.org/index.php?title=Response_Modality> .
+
+
+###  http://www.tempuri.org/empirion#ResponseModalityRepresentation
+empirion:ResponseModalityRepresentation rdf:type owl:Class ;
+                                        rdfs:subClassOf empirion:ResponseCharacteristicRepresentation .
+
+
+###  http://www.tempuri.org/empirion#ResponseModalityRepresentedVariable
+empirion:ResponseModalityRepresentedVariable rdf:type owl:Class ;
+                                             rdfs:subClassOf empirion:ResponseCharacteristicRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#ResponseRepresentation
+empirion:ResponseRepresentation rdf:type owl:Class ;
+                                rdfs:subClassOf empirion:Representation .
+
+
+###  http://www.tempuri.org/empirion#ResponseRepresentedVariable
+empirion:ResponseRepresentedVariable rdf:type owl:Class ;
+                                     rdfs:subClassOf empirion:RepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#ResponseRole
+empirion:ResponseRole rdf:type owl:Class ;
+                      rdfs:subClassOf empirion:Variable ;
+                      rdfs:comment "The role of response is attributed to the overt or covert behavior which is elicited from the subject in an experimental condition."@en ;
+                      rdfs:isDefinedBy <http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00134> ;
+                      rdfs:label "Response Role"@en ;
+                      rdfs:seeAlso <http://wiki.cogpo.org/index.php?title=Response_Role> .
+
+
+###  http://www.tempuri.org/empirion#ResponseRoleRepresentation
+empirion:ResponseRoleRepresentation rdf:type owl:Class ;
+                                    rdfs:subClassOf empirion:Representation .
+
+
+###  http://www.tempuri.org/empirion#ResponseRoleRepresentedVariable
+empirion:ResponseRoleRepresentedVariable rdf:type owl:Class ;
+                                         rdfs:subClassOf empirion:RepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#ResponseTime
+empirion:ResponseTime rdf:type owl:Class ;
+                      rdfs:subClassOf empirion:ResponseCharacteristic ;
+                      rdfs:comment "Reaction time is the time that elapses between the onset or presentation of a stimulus and the occurrence of a specific response to that stimulus. There are several types, including simple reaction time and choice reaction time. Reaction time can be used to assess various psychological constructs. To assess negative affect, for example, a researcher might measure the time between presentation of various words with emotional connotations and a participant’s indication that each word is either “positive” or “negative.” Also called response latency; response time."@en ;
+                      rdfs:label "Response Time"@en ;
+                      rdfs:seeAlso <https://dictionary.apa.org/reaction-time> .
+
+
+###  http://www.tempuri.org/empirion#ResponseTimeRepresentation
+empirion:ResponseTimeRepresentation rdf:type owl:Class ;
+                                    rdfs:subClassOf empirion:ResponseCharacteristicRepresentation .
+
+
+###  http://www.tempuri.org/empirion#ResponseTimeRepresentedVariable
+empirion:ResponseTimeRepresentedVariable rdf:type owl:Class ;
+                                         rdfs:subClassOf empirion:ResponseCharacteristicRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#Stimulus
+empirion:Stimulus rdf:type owl:Class ;
+                  rdfs:subClassOf empirion:Variable ;
+                  rdfs:comment "The  object or set of objects, internal or external to the subject, which is intended to generate either an overt or covert response in the subject as part of an experimental condition."@en ;
+                  rdfs:label "Stimulus"@en ;
+                  rdfs:seeAlso <http://wiki.cogpo.org/index.php?title=Stimulus> .
+
+
+###  http://www.tempuri.org/empirion#StimulusCharacteristic
+empirion:StimulusCharacteristic rdf:type owl:Class ;
+                                rdfs:subClassOf empirion:Variable ;
+                                rdfs:comment "Characteristics of Stimulus. Distal stimulus in perception, the actual object in the environment that stimulates or acts on a sense organ."@en ;
+                                rdfs:label "Stimulus Characteristic"@en ;
+                                rdfs:seeAlso <https://dictionary.apa.org/distal-stimulus> .
+
+
+###  http://www.tempuri.org/empirion#StimulusCharacteristicRepresentation
+empirion:StimulusCharacteristicRepresentation rdf:type owl:Class ;
+                                              rdfs:subClassOf empirion:Representation .
+
+
+###  http://www.tempuri.org/empirion#StimulusCharacteristicRepresentedVariable
+empirion:StimulusCharacteristicRepresentedVariable rdf:type owl:Class ;
+                                                   rdfs:subClassOf empirion:RepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#StimulusColor
+empirion:StimulusColor rdf:type owl:Class ;
+                       rdfs:subClassOf empirion:StimulusCharacteristic ;
+                       rdfs:comment "Color of the stimulus."@en ;
+                       rdfs:label "Stimulus Color"@en .
+
+
+###  http://www.tempuri.org/empirion#StimulusColorRepresentation
+empirion:StimulusColorRepresentation rdf:type owl:Class ;
+                                     rdfs:subClassOf empirion:StimulusCharacteristicRepresentation .
+
+
+###  http://www.tempuri.org/empirion#StimulusColorRepresentedVariable
+empirion:StimulusColorRepresentedVariable rdf:type owl:Class ;
+                                          rdfs:subClassOf empirion:StimulusCharacteristicRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#StimulusCongruence
+empirion:StimulusCongruence rdf:type owl:Class ;
+                            rdfs:subClassOf empirion:StimulusCharacteristic ;
+                            rdfs:comment "Congruence of the ratio of the side parts of the stimulus (distractors or flankers) to the Central (target). in the Flanker problem <<><< is a non congruent stimulus and <<<<< is congruent."@en ;
+                            rdfs:label "Stimulus Congruence"@en .
+
+
+###  http://www.tempuri.org/empirion#StimulusCongruenceRepresentation
+empirion:StimulusCongruenceRepresentation rdf:type owl:Class ;
+                                          rdfs:subClassOf empirion:StimulusCharacteristicRepresentation .
+
+
+###  http://www.tempuri.org/empirion#StimulusCongruenceRepresentedVariable
+empirion:StimulusCongruenceRepresentedVariable rdf:type owl:Class ;
+                                               rdfs:subClassOf empirion:StimulusCharacteristicRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#StimulusFile
+empirion:StimulusFile rdf:type owl:Class ;
+                      rdfs:subClassOf empirion:DataRepresentation ;
+                      rdfs:comment "Path to the image or content. Instances of the class are pathes to the corresponding files."@en ;
+                      rdfs:label "Stimulus File"@en .
+
+
+###  http://www.tempuri.org/empirion#StimulusIdentificator
+empirion:StimulusIdentificator rdf:type owl:Class ;
+                               rdfs:subClassOf empirion:StimulusCharacteristic ;
+                               rdfs:comment "Identificator of the stimulus."@en ;
+                               rdfs:label "Stimulus Identificator"@en .
+
+
+###  http://www.tempuri.org/empirion#StimulusIdentificatorRepresentation
+empirion:StimulusIdentificatorRepresentation rdf:type owl:Class ;
+                                             rdfs:subClassOf empirion:StimulusCharacteristicRepresentation .
+
+
+###  http://www.tempuri.org/empirion#StimulusIdentificatorRepresentedVariable
+empirion:StimulusIdentificatorRepresentedVariable rdf:type owl:Class ;
+                                                  rdfs:subClassOf empirion:StimulusCharacteristicRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#StimulusModality
+empirion:StimulusModality rdf:type owl:Class ;
+                          rdfs:subClassOf empirion:StimulusCharacteristic ;
+                          rdfs:comment "The class contains other subclasses that can be also added from CogPO ontology."@en ,
+                                       "The quality of the sensory perception of an explicit stimulus."@en ;
+                          rdfs:isDefinedBy <http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00124> ;
+                          rdfs:label "Stimulus Modality"@en .
+
+
+###  http://www.tempuri.org/empirion#StimulusModalityRepresentation
+empirion:StimulusModalityRepresentation rdf:type owl:Class ;
+                                        rdfs:subClassOf empirion:StimulusCharacteristicRepresentation .
+
+
+###  http://www.tempuri.org/empirion#StimulusModalityRepresentedVariable
+empirion:StimulusModalityRepresentedVariable rdf:type owl:Class ;
+                                             rdfs:subClassOf empirion:StimulusCharacteristicRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#StimulusNumber
+empirion:StimulusNumber rdf:type owl:Class ;
+                        rdfs:subClassOf empirion:StimulusCharacteristic ;
+                        rdfs:comment "Number of the stimulus."@en ;
+                        rdfs:label "Stimulus Number"@en .
+
+
+###  http://www.tempuri.org/empirion#StimulusNumberRepresentation
+empirion:StimulusNumberRepresentation rdf:type owl:Class ;
+                                      rdfs:subClassOf empirion:StimulusCharacteristicRepresentation .
+
+
+###  http://www.tempuri.org/empirion#StimulusNumberRepresentedVariable
+empirion:StimulusNumberRepresentedVariable rdf:type owl:Class ;
+                                           rdfs:subClassOf empirion:StimulusCharacteristicRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#StimulusPosition
+empirion:StimulusPosition rdf:type owl:Class ;
+                          rdfs:subClassOf empirion:StimulusCharacteristic ;
+                          rdfs:comment "Position of stimulus parts."@en ;
+                          rdfs:label "Stimulus Position"@en .
+
+
+###  http://www.tempuri.org/empirion#StimulusPositionRepresentation
+empirion:StimulusPositionRepresentation rdf:type owl:Class ;
+                                        rdfs:subClassOf empirion:StimulusCharacteristicRepresentation .
+
+
+###  http://www.tempuri.org/empirion#StimulusPositionRepresentedVariable
+empirion:StimulusPositionRepresentedVariable rdf:type owl:Class ;
+                                             rdfs:subClassOf empirion:StimulusCharacteristicRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#StimulusRepresentation
+empirion:StimulusRepresentation rdf:type owl:Class ;
+                                rdfs:subClassOf empirion:Representation .
+
+
+###  http://www.tempuri.org/empirion#StimulusRepresentedVariable
+empirion:StimulusRepresentedVariable rdf:type owl:Class ;
+                                     rdfs:subClassOf empirion:RepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#StimulusRole
+empirion:StimulusRole rdf:type owl:Class ;
+                      rdfs:subClassOf empirion:Variable ;
+                      rdfs:comment "The role of a stimulus in a behavioral experiment is attributed to the object(s) which are presented to the subject in a controlled manner in the context of the experiment."@en ;
+                      rdfs:isDefinedBy <http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00135> ;
+                      rdfs:label "Stimulus Role"@en ;
+                      rdfs:seeAlso <http://wiki.cogpo.org/index.php?title=Stimulus_Role> .
+
+
+###  http://www.tempuri.org/empirion#StimulusRoleRepresentation
+empirion:StimulusRoleRepresentation rdf:type owl:Class ;
+                                    rdfs:subClassOf empirion:Representation .
+
+
+###  http://www.tempuri.org/empirion#StimulusRoleRepresentedVariable
+empirion:StimulusRoleRepresentedVariable rdf:type owl:Class ;
+                                         rdfs:subClassOf empirion:RepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#StimulusSize
+empirion:StimulusSize rdf:type owl:Class ;
+                      rdfs:subClassOf empirion:StimulusCharacteristic ;
+                      rdfs:comment "Size of the stimulus."@en ;
+                      rdfs:label "Stimulus Size"@en .
+
+
+###  http://www.tempuri.org/empirion#StimulusSizeRepresentation
+empirion:StimulusSizeRepresentation rdf:type owl:Class ;
+                                    rdfs:subClassOf empirion:StimulusCharacteristicRepresentation .
+
+
+###  http://www.tempuri.org/empirion#StimulusSizeRepresentedVariable
+empirion:StimulusSizeRepresentedVariable rdf:type owl:Class ;
+                                         rdfs:subClassOf empirion:StimulusCharacteristicRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#StimulusValence
+empirion:StimulusValence rdf:type owl:Class ;
+                         rdfs:subClassOf empirion:StimulusCharacteristic ;
+                         rdfs:comment "Valence of the stimulus (positive or negative)."@en ;
+                         rdfs:label "Stimulus Valence"@en .
+
+
+###  http://www.tempuri.org/empirion#StimulusValenceRepresentation
+empirion:StimulusValenceRepresentation rdf:type owl:Class ;
+                                       rdfs:subClassOf empirion:StimulusCharacteristicRepresentation .
+
+
+###  http://www.tempuri.org/empirion#StimulusValenceRepresentedVariable
+empirion:StimulusValenceRepresentedVariable rdf:type owl:Class ;
+                                            rdfs:subClassOf empirion:StimulusCharacteristicRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#SubjectAge
+empirion:SubjectAge rdf:type owl:Class ;
+                    rdfs:subClassOf empirion:SubjectIntrinsicCharasteristics ;
+                    rdfs:comment "Age of the subject. Age is the amount of time that has passed since an organism’s birth; that is, an individual’s chronological age. Compare gestational age."@en ;
+                    rdfs:label "Subject Age"@en ;
+                    rdfs:seeAlso <https://dictionary.apa.org/age> .
+
+
+###  http://www.tempuri.org/empirion#SubjectAgeRepresentation
+empirion:SubjectAgeRepresentation rdf:type owl:Class ;
+                                  rdfs:subClassOf empirion:SubjectIntrinsicCharasteristicsRepresentation .
+
+
+###  http://www.tempuri.org/empirion#SubjectAgeRepresentedVariable
+empirion:SubjectAgeRepresentedVariable rdf:type owl:Class ;
+                                       rdfs:subClassOf empirion:SubjectIntrinsicCharasteristicsRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#SubjectCharacteristic
+empirion:SubjectCharacteristic rdf:type owl:Class ;
+                               rdfs:subClassOf empirion:Variable ;
+                               rdfs:comment "Characteristics of the subjects. Subjecs is generally, the individual human or nonhuman animal that takes part in an experiment or research study and whose responses or performance are reported or evaluated; less frequently, the “subject” may also be an institution, group, or other entity. Many now recommend that the term participant be used for humans, considering the word subject to be depersonalizing and to imply passivity and submissiveness on the part of the experimentee."@en ;
+                               rdfs:label "Subject Characteristic"@en ;
+                               rdfs:seeAlso <https://dictionary.apa.org/subject> .
+
+
+###  http://www.tempuri.org/empirion#SubjectCharacteristicRepresentation
+empirion:SubjectCharacteristicRepresentation rdf:type owl:Class ;
+                                             rdfs:subClassOf empirion:Representation .
+
+
+###  http://www.tempuri.org/empirion#SubjectCharacteristicRepresentedVariable
+empirion:SubjectCharacteristicRepresentedVariable rdf:type owl:Class ;
+                                                  rdfs:subClassOf empirion:RepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#SubjectExperimentalCharasteristics
+empirion:SubjectExperimentalCharasteristics rdf:type owl:Class ;
+                                            rdfs:subClassOf empirion:SubjectCharacteristic ;
+                                            rdfs:comment "Charaxteristics of the subject that are dependent on the experiment procedure."@en ;
+                                            rdfs:label "Subject Experimental Charasteristics"@en .
+
+
+###  http://www.tempuri.org/empirion#SubjectExperimentalCharasteristicsRepresentation
+empirion:SubjectExperimentalCharasteristicsRepresentation rdf:type owl:Class ;
+                                                          rdfs:subClassOf empirion:SubjectCharacteristicRepresentation .
+
+
+###  http://www.tempuri.org/empirion#SubjectExperimentalCharasteristicsRepresentedVariable
+empirion:SubjectExperimentalCharasteristicsRepresentedVariable rdf:type owl:Class ;
+                                                               rdfs:subClassOf empirion:SubjectCharacteristicRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#SubjectGroup
+empirion:SubjectGroup rdf:type owl:Class ;
+                      rdfs:subClassOf empirion:SubjectExperimentalCharasteristics ;
+                      rdfs:comment "Designation of the group that the subject belongs to. Group in research denotes a collection of participants who all experience the same experimental conditions and whose responses are to be compared to the responses of one or more other collections of research participants."@en ;
+                      rdfs:label "Subject Group"@en ;
+                      rdfs:seeAlso <https://dictionary.apa.org/group> .
+
+
+###  http://www.tempuri.org/empirion#SubjectGroupRepresentation
+empirion:SubjectGroupRepresentation rdf:type owl:Class ;
+                                    rdfs:subClassOf empirion:SubjectExperimentalCharasteristicsRepresentation .
+
+
+###  http://www.tempuri.org/empirion#SubjectGroupRepresentedVariable
+empirion:SubjectGroupRepresentedVariable rdf:type owl:Class ;
+                                         rdfs:subClassOf empirion:SubjectExperimentalCharasteristicsRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#SubjectHandedness
+empirion:SubjectHandedness rdf:type owl:Class ;
+                           rdfs:subClassOf empirion:SubjectIntrinsicCharasteristics ;
+                           rdfs:comment "Handedness of the subject. Handedness is the consistent use of one hand rather than the other in performing certain tasks. The preference usually is related to a dominance effect of the motor cortex on the opposite side of the body. Also called hand dominance; manual dominance. See cerebral dominance; laterality; left-handedness; right-handedness."@en ;
+                           rdfs:label "Subject Handedness"@en ;
+                           rdfs:seeAlso <https://dictionary.apa.org/handedness> .
+
+
+###  http://www.tempuri.org/empirion#SubjectHandednessRepresentation
+empirion:SubjectHandednessRepresentation rdf:type owl:Class ;
+                                         rdfs:subClassOf empirion:SubjectIntrinsicCharasteristicsRepresentation .
+
+
+###  http://www.tempuri.org/empirion#SubjectHandednessRepresentedVariable
+empirion:SubjectHandednessRepresentedVariable rdf:type owl:Class ;
+                                              rdfs:subClassOf empirion:SubjectIntrinsicCharasteristicsRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#SubjectIntrinsicCharasteristics
+empirion:SubjectIntrinsicCharasteristics rdf:type owl:Class ;
+                                         rdfs:subClassOf empirion:SubjectCharacteristic ;
+                                         rdfs:comment "Charasteristics of the subject that are inherent in the subject and are not dependent on the experiment procedure."@en ;
+                                         rdfs:label "Subject Intrinsic Charasteristics"@en .
+
+
+###  http://www.tempuri.org/empirion#SubjectIntrinsicCharasteristicsRepresentation
+empirion:SubjectIntrinsicCharasteristicsRepresentation rdf:type owl:Class ;
+                                                       rdfs:subClassOf empirion:SubjectCharacteristicRepresentation .
+
+
+###  http://www.tempuri.org/empirion#SubjectIntrinsicCharasteristicsRepresentedVariable
+empirion:SubjectIntrinsicCharasteristicsRepresentedVariable rdf:type owl:Class ;
+                                                            rdfs:subClassOf empirion:SubjectCharacteristicRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#SubjectNumber
+empirion:SubjectNumber rdf:type owl:Class ;
+                       rdfs:subClassOf empirion:SubjectExperimentalCharasteristics ;
+                       rdfs:comment "Number or identifier of the subject."@en ;
+                       rdfs:label "Subject Number"@en .
+
+
+###  http://www.tempuri.org/empirion#SubjectNumberRepresentation
+empirion:SubjectNumberRepresentation rdf:type owl:Class ;
+                                     rdfs:subClassOf empirion:SubjectExperimentalCharasteristicsRepresentation .
+
+
+###  http://www.tempuri.org/empirion#SubjectNumberRepresentedVariable
+empirion:SubjectNumberRepresentedVariable rdf:type owl:Class ;
+                                          rdfs:subClassOf empirion:SubjectExperimentalCharasteristicsRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#SubjectSex
+empirion:SubjectSex rdf:type owl:Class ;
+                    rdfs:subClassOf empirion:SubjectIntrinsicCharasteristics ;
+                    rdfs:comment "Sex of the subject. Sex is the traits that distinguish between males and females. Sex refers especially to physical and biological traits, whereas gender refers especially to social or cultural traits, although the distinction between the two terms is not regularly observed."@en ;
+                    rdfs:label "Subject Sex"@en ;
+                    rdfs:seeAlso <https://dictionary.apa.org/sex> .
+
+
+###  http://www.tempuri.org/empirion#SubjectSexRepresentation
+empirion:SubjectSexRepresentation rdf:type owl:Class ;
+                                  rdfs:subClassOf empirion:SubjectIntrinsicCharasteristicsRepresentation .
+
+
+###  http://www.tempuri.org/empirion#SubjectSexRepresentedVariable
+empirion:SubjectSexRepresentedVariable rdf:type owl:Class ;
+                                       rdfs:subClassOf empirion:SubjectIntrinsicCharasteristicsRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#Symbol
+empirion:Symbol rdf:type owl:Class ;
+                rdfs:subClassOf empirion:Character ;
+                rdfs:isDefinedBy <http://www.cogpo.org/ontologies/COGPO_00170> ;
+                rdfs:label "Symbol"@en .
+
+
+###  http://www.tempuri.org/empirion#SymbolsRepresentation
+empirion:SymbolsRepresentation rdf:type owl:Class ;
+                               rdfs:subClassOf empirion:CharactersRepresentation .
+
+
+###  http://www.tempuri.org/empirion#SymbolsRepresentedVariable
+empirion:SymbolsRepresentedVariable rdf:type owl:Class ;
+                                    rdfs:subClassOf empirion:CharactersRepresentedVariable .
+
+
+###  http://www.tempuri.org/empirion#ValueDomain
+empirion:ValueDomain rdf:type owl:Class ;
+                     rdfs:subClassOf empirion:VariableSensemaker ;
+                     rdfs:comment "Codifications also count as value domains."@en ,
+                                  "Similar to GSIM Value Domain: The permitted range of values for a characteristic of a variable."@en ;
+                     rdfs:label "Value Domain"@en ;
+                     rdfs:seeAlso <https://statswiki.unece.org/display/GSIMclick/Value+Domain> .
+
+
+###  http://www.tempuri.org/empirion#Variable
+empirion:Variable rdf:type owl:Class ;
+                  rdfs:comment "Variables provide a definition of the column in a rectangular data file. Variable is a characteristic of a unit being observed. A variable might be the answer of a question, have an administrative source, or be derived from other variables."@en ;
+                  rdfs:isDefinedBy disco:Variable ;
+                  rdfs:label "Variable"@en ;
+                  rdfs:seeAlso <https://rdf-vocabulary.ddialliance.org/discovery.html#dfn-disco-variable> .
+
+
+###  http://www.tempuri.org/empirion#VariableDescriptionFile
+empirion:VariableDescriptionFile rdf:type owl:Class ;
+                                 rdfs:subClassOf empirion:MetadataFile ;
+                                 rdfs:comment "The file with human readable description of the variables in the data set. Often named Codebook or ReadMe. Instances of the class are pathes to the corresponding files."@en ;
+                                 rdfs:label "Variable Description File"@en .
+
+
+###  http://www.tempuri.org/empirion#VariableSensemaker
+empirion:VariableSensemaker rdf:type owl:Class ;
+                            rdfs:comment "This class is temporary storage for the variables' characteristics that are not in the data set itself but are needed for the data correct interpretation."@en ;
+                            rdfs:label "Variable Sensemaker"@en .
+
+
+###  http://www.tempuri.org/empirion#VariableType
+empirion:VariableType rdf:type owl:Class ;
+                      rdfs:subClassOf empirion:VariableSensemaker ;
+                      rdfs:comment "The class contains an individuals that represent different types of variables. During ontology population each variable should be connected with corresponding type."@en ;
+                      rdfs:label "Variable Type"@en .
+
+
+###  http://www.tempuri.org/empirion#Word
+empirion:Word rdf:type owl:Class ;
+              rdfs:subClassOf empirion:Character ;
+              rdfs:isDefinedBy <http://www.cogpo.org/ontologies/COGPO_00169> ;
+              rdfs:label "Word"@en .
+
+
+###  http://www.tempuri.org/empirion#WordsRepresentation
+empirion:WordsRepresentation rdf:type owl:Class ;
+                             rdfs:subClassOf empirion:CharactersRepresentation .
+
+
+###  http://www.tempuri.org/empirion#WordsRepresentedVariable
+empirion:WordsRepresentedVariable rdf:type owl:Class ;
+                                  rdfs:subClassOf empirion:CharactersRepresentedVariable .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.tempuri.org/empirion#CueStimilus
+empirion:CueStimilus rdf:type owl:NamedIndividual ,
+                              empirion:StimulusRole ;
+                     rdfs:label "Cue Stimulus"@en .
+
+
+###  http://www.tempuri.org/empirion#DerivedVariable
+empirion:DerivedVariable rdf:type owl:NamedIndividual ,
+                                  empirion:VariableType ;
+                         rdfs:comment "The variable that was derived by the raw variable."@en ;
+                         rdfs:label "Derived Variable"@en .
+
+
+###  http://www.tempuri.org/empirion#DescriptiveVariable
+empirion:DescriptiveVariable rdf:type owl:NamedIndividual ,
+                                      empirion:VariableType ;
+                             rdfs:label "Descriptive Variable"@en .
+
+
+###  http://www.tempuri.org/empirion#MaskStimulus
+empirion:MaskStimulus rdf:type owl:NamedIndividual ,
+                               empirion:StimulusRole ;
+                      rdfs:label "Mask Stimulus"@en .
+
+
+###  http://www.tempuri.org/empirion#PrimeResponse
+empirion:PrimeResponse rdf:type owl:NamedIndividual ,
+                                empirion:ResponseRole ;
+                       rdfs:label "Prime Response"@en .
+
+
+###  http://www.tempuri.org/empirion#PrimeStimulus
+empirion:PrimeStimulus rdf:type owl:NamedIndividual ,
+                                empirion:StimulusRole ;
+                       rdfs:label "Prime Stimulus"@en .
+
+
+###  http://www.tempuri.org/empirion#RawVariable
+empirion:RawVariable rdf:type owl:NamedIndividual ,
+                              empirion:VariableType ;
+                     rdfs:comment "The variable that was retrieved by direct measurement (for example, reaction time or monitor resolution)."@en ;
+                     rdfs:label "Raw Variable"@en .
+
+
+###  http://www.tempuri.org/empirion#TargetResponse
+empirion:TargetResponse rdf:type owl:NamedIndividual ,
+                                 empirion:ResponseRole ;
+                        rdfs:label "Target Response"@en .
+
+
+###  http://www.tempuri.org/empirion#TargetStimulus
+empirion:TargetStimulus rdf:type owl:NamedIndividual ,
+                                 empirion:StimulusRole ;
+                        rdfs:label "Target Stimulus"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
