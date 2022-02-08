@@ -12,7 +12,7 @@
      xmlns:prov="http://www.w3.org/ns/prov#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:disco="http://rdf-vocabulary.ddialliance.org/discovery#"
+     xmlns:disco="https://raw.githubusercontent.com/jimijimiyo/empirion/master/ontology/empirion_v4/discovery.owl#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:schema="http://schema.org/"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
