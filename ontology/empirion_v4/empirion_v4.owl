@@ -168,6 +168,12 @@
         <rdfs:comment xml:lang="en">For connection of a Represented Variable with its Value Domain.</rdfs:comment>
         <rdfs:label xml:lang="en">has value domain</rdfs:label>
     </owl:ObjectProperty>
+  
+  
+
+    <!-- http://www.tempuri.org/empirion#metadata -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion#metadata"/>
     
 
 
