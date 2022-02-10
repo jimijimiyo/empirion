@@ -726,7 +726,7 @@
     <owl:Class rdf:about="http://www.tempuri.org/empirion#Picture">
         <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#ExplicitStimulus"/>
         <rdfs:isDefinedBy rdf:resource="http://www.cogpo.org/ontologies/COGPO_00172"/>
-        <rdfs:label xml:lang="en">Pictures</rdfs:label>
+        <rdfs:label xml:lang="en">Picture</rdfs:label>
     </owl:Class>
     
 
