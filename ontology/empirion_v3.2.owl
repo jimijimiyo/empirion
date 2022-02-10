@@ -622,12 +622,12 @@
     
 
 
-    <!-- http://www.tempuri.org/empirion#Letter -->
+    <!-- http://www.tempuri.org/empirion#Letters -->
 
-    <owl:Class rdf:about="http://www.tempuri.org/empirion#Letter">
+    <owl:Class rdf:about="http://www.tempuri.org/empirion#Letters">
         <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Character"/>
         <rdfs:isDefinedBy rdf:resource="http://www.cogpo.org/ontologies/COGPO_00163"/>
-        <rdfs:label xml:lang="en">Letter</rdfs:label>
+        <rdfs:label xml:lang="en">Letters</rdfs:label>
     </owl:Class>
     
 
@@ -720,12 +720,12 @@
     
 
 
-    <!-- http://www.tempuri.org/empirion#Picture -->
+    <!-- http://www.tempuri.org/empirion#Pictures -->
 
-    <owl:Class rdf:about="http://www.tempuri.org/empirion#Picture">
+    <owl:Class rdf:about="http://www.tempuri.org/empirion#Pictures">
         <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#ExplicitStimulus"/>
         <rdfs:isDefinedBy rdf:resource="http://www.cogpo.org/ontologies/COGPO_00172"/>
-        <rdfs:label xml:lang="en">Picture</rdfs:label>
+        <rdfs:label xml:lang="en">Pictures</rdfs:label>
     </owl:Class>
     
 
@@ -1466,12 +1466,12 @@
     
 
 
-    <!-- http://www.tempuri.org/empirion#Symbol -->
+    <!-- http://www.tempuri.org/empirion#Symbols -->
 
-    <owl:Class rdf:about="http://www.tempuri.org/empirion#Symbol">
+    <owl:Class rdf:about="http://www.tempuri.org/empirion#Symbols">
         <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Character"/>
         <rdfs:isDefinedBy rdf:resource="http://www.cogpo.org/ontologies/COGPO_00170"/>
-        <rdfs:label xml:lang="en">Symbol</rdfs:label>
+        <rdfs:label xml:lang="en">Symbols</rdfs:label>
     </owl:Class>
     
 
