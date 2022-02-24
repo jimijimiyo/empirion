@@ -146,6 +146,9 @@
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion#metadata"/>
     
 
+    <!-- http://www.tempuri.org/empirion#represents -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion#represents"/>
 
     <!-- http://www.tempuri.org/empirion#representation -->
 
