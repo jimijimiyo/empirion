@@ -1,0 +1,13 @@
+DataFile			Flanker.txt
+VariableDescription	ReadMe.txt
+
+				ontology class				value domains
+Participant		SubjectNumber
+Block			ExperementBlockNumber
+Trial			ExperementTrialNumber
+Stimulus		Symbol
+Condition		StimulusCongruence			neutral-neutral;congruent-congruent;incongruent-incongruent
+CorrectResp		CorrectResponse
+#Code_CorrResp	CorrectResponseRepresentation 	
+Response_Code	ButtonPress
+Response_Time	ResponseTime				milliseconds

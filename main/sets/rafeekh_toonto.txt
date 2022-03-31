@@ -1,0 +1,11 @@
+DataFile			Flanker.xlsx
+VariableDescription	Description.txt
+
+				ontology class						variable representations and value domains
+participant		SubjectNumber
+TRIAL_INDEX		ExperementTrialNumber
+group			SubjectGroup						control-control;experimental-experimental
+RT				ResponseTime						milliseconds
+trial_type		StimulusCongruence					congruent-congruent;incongruent-incongruent
+#monitoring		SubjectIntrinsicCharasteristics		high-high;low-low
+#time			Это непонятно что, пропускаем
