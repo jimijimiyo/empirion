@@ -1,16 +1,15 @@
-Empirion omtology for the description of data from the behavioral expetiments and propotype for its automatic population.
-Current working versions (February 2022):
-- empirion_v3.2 with referencing of the other ontologies;
-- empirion_v4 with direct import of the other ontologies.
-These versions are the same with the exception of other ontologies reuse style. The file empirion.ttl is the same that v3.2.
+Empirion ontology for the description of data from the behavioral experiments and prototype for its automatic population.
+
+To run it on your local machine download **main** folder, after this:
+- In the file emp.py on the line 138 instead of C:\Users\Alena\Downloads put the path to your local copy of the main folder. 
+- If you renamed the file with the ontology to be populated (empirion_pop.owl by default), change its name in the emp.py (line 139).
+- Run the code.
+- While the code is executed it will ask you to choose the path to the datasets for ontology population. We put some datasets and corresponding files in the sets folder, so chose it. Sometimes this window does not pop up, check the background windows, please. 
+- Check the empirion_pop.owl file, it should be filled with individuals now.
+Comments in the file emp.py are currently in Russian but we will add english comments soon! For now feel free to ask any questions at jimijimiyo@gmail.com (Alena).
+
+The other folders in the repository are:
+- ontology_versions with the previous ontology versions including another branch of ontology development (empirion_v4) with a direct import of reused ontologies. The file empirion.owl is always the same as the latest version of the ontology in the main branch (v 3.3 as of March 2022).
+- prototype_old is a first version of the prototype based on our previous project. You can find more about it in our paper A method of semi-automated ontology population from multiple semi-structured data sources (https://doi.org/10.1177/0165551520950243).
 
 The project's page and publications: https://www.researchgate.net/project/Development-of-the-knowledge-bases-from-empirical-research-datasets-ontological-approach-EMPIRION
-
-
-Онтология empirion для описания массивов данных, полученных в поведенческих экспериментах и прототип для её автоматического наполнения.
-Текущие актуальные версии онтологии (февраль 2022):
-- empirion_v3.2 с референсированием сторонних онтологий;
-- empirion_v4 с прямым импортом используемых онтологий.
-Данные версии аналогичны друг другу за исключением стиля повторного использования других онтологических ресурсов. Файл empirion.ttl соответстует v3.2.
-
-Страница проекта и публикации по проекту: https://www.researchgate.net/project/Development-of-the-knowledge-bases-from-empirical-research-datasets-ontological-approach-EMPIRION
