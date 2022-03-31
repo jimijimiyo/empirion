@@ -1,0 +1,21 @@
+DataFile			exp_data.csv
+VariableDescription	codebook.txt
+
+					ontology class			value domains	variable representations
+eval_corrans		ResponseDescription						g - positive; b - negative
+eval_pic			Pictures				
+flanker_type		StimulusCongruence						congr - congruent; noncongr - incongruent
+trials.thisN		ExperementTrialNumber	
+flanker_resp.keys	ButtonPress				
+flanker_resp.corr	ResponseAccuracy						0 - error; 1 - correct
+flanker_resp.rt		ResponseTime			seconds
+eval_resp.keys		ButtonPress				
+eval_resp.corr		ResponseAccuracy						0 - error; 1 - correct
+eval_resp.rt		ResponseTime			seconds
+flanker_stimulus	Letters					
+participant			SubjectNumber			
+years				SubjectAge				
+sex					SubjectSex								f - female; m - male
+block				ExperementBlockNumber	
+pic_valence			StimulusValence			
+flanker_acc			ResponseAccuracy						Error - error; Correct - correct

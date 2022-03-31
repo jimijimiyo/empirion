@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://raw.githubusercontent.com/jimijimiyo/empirion/master/prototype/meteor.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://raw.githubusercontent.com/jimijimiyo/empirion/master/prototype/meteor.owl">
+    <Prefix name="" IRI="https://raw.githubusercontent.com/jimijimiyo/empirion/master/prototype/meteor.owl"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Column"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pointer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sheet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Table"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Workbook"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFirst"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLast"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNext"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPart"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPath"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pointer"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#combineInstancesFrom"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#getInstancesFrom"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#getValuesFrom"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#makeList"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#makeReferenceTo"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#source"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#useDataProperty"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#useObjectProperty"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Sheet"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPart"/>
+            <Class IRI="#Table"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sheet"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasPart"/>
+            <Class IRI="#Table"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Table"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPart"/>
+            <Class IRI="#Column"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Table"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasPart"/>
+            <Class IRI="#Column"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Workbook"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPart"/>
+            <Class IRI="#Sheet"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Workbook"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasPart"/>
+            <Class IRI="#Sheet"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Workbook"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Workbook"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasPath"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Workbook"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Workbook"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasPath"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Column"/>
+        <Class IRI="#Pointer"/>
+        <Class IRI="#Sheet"/>
+        <Class IRI="#Table"/>
+        <Class IRI="#Workbook"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Pointer"/>
+        <NamedIndividual IRI="#pointer"/>
+    </ClassAssertion>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasNext"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasFirst"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasLast"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasNext"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasPart"/>
+    </InverseFunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFirst"/>
+        <Class IRI="#Pointer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLast"/>
+        <Class IRI="#Pointer"/>
+    </ObjectPropertyDomain>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasPath"/>
+    </FunctionalDataProperty>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
