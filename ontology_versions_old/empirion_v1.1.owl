@@ -1,0 +1,343 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3id.org/empirion#"
+     xml:base="http://www.w3id.org/empirion"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:obo="http://purl.obolibrary.org/obo/">
+    <owl:Ontology rdf:about="http://www.w3id.org/empirion"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00049 -->
+
+    <owl:Class rdf:about="http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00049">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#ExperementCharacteristics"/>
+        <obo:IAO_0000115>Within an Experimental Paradigm, the behavioral paradigm describes the behavioral aspects of the experiment: what stimuli are presented to the subject when, and under what conditions, and what the subject&apos;s responses are supposed to be.</obo:IAO_0000115>
+        <rdfs:label>Behavioral Experimental Paradigm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00059 -->
+
+    <owl:Class rdf:about="http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00059">
+        <rdfs:subClassOf rdf:resource="http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00049"/>
+        <obo:IAO_0000115>A Behavioral Experimental Paradigm in which, in at least one of the conditions, Subjects are instructed to perform a task (often discriminating the direction of a central arrow) while ignoring flanking stimuli on either side, which indicate a different response than the central stimuli.</obo:IAO_0000115>
+        <rdfs:label>Flanker Task Paradigm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00124 -->
+
+    <owl:Class rdf:about="http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00124">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#StimulusCharacteristics"/>
+        <obo:IAO_0000115>The quality of the sensory perception of a stimulus.</obo:IAO_0000115>
+        <rdfs:label>Stimulus Modality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#ExperementBlockCharacteristics -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#ExperementBlockCharacteristics">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#ExperementPartCharacteristics"/>
+        <rdfs:comment>&quot;Block design&quot; is a type of research study in which participants are divided into relatively homogeneous subsets (blocks) from which they are assigned to the experimental or treatment conditions. For example, in a simple block design to evaluate the efficacy of several antidepressants, participants with similar pretest depression scores might be grouped into homogeneous blocks and then assigned to receive different medications. The purpose of a block design is to ensure that a characteristic of the study participants that is related to the target outcome (i.e., a covariate) is distributed equally across treatment conditions.</rdfs:comment>
+        <rdfs:comment>An experiment may consist of several parts which are often called &quot;blocks&quot;.</rdfs:comment>
+        <rdfs:isDefinedBy>https://dictionary.apa.org/block-design</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#ExperementBlockNumber -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#ExperementBlockNumber">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#ExperementBlockCharacteristics"/>
+        <rdfs:comment>Number of the experiment block.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#ExperementCharacteristics -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#ExperementCharacteristics">
+        <rdfs:comment>Characteristics of an experiment. Experiment is a series of observations conducted under controlled conditions to study a relationship with the purpose of drawing causal inferences about that relationship. An experiment involves the manipulation of an independent variable, the measurement of a dependent variable, and the exposure of various participants to one or more of the conditions being studied. Random selection of participants and their random assignment to conditions also are necessary in experiments. —experimental adj.</rdfs:comment>
+        <rdfs:isDefinedBy>https://dictionary.apa.org/experiment</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#ExperementNumber -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#ExperementNumber">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#ExperementCharacteristics"/>
+        <rdfs:comment>Number or ID (identifier) of the experiment in the connected paper or report.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#ExperementPartCharacteristics -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#ExperementPartCharacteristics">
+        <rdfs:comment>Characteristics of the parts of the experiment.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#ExperementTrialCharacterictics -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#ExperementTrialCharacterictics">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#ExperementPartCharacteristics"/>
+        <rdfs:comment>Trial. In testing, conditioning, or other experimentation, a single performance of a given task (e.g., one run through a maze) or a single presentation of a stimulus (e.g., one viewing of an ordered list of three-letter words).</rdfs:comment>
+        <rdfs:isDefinedBy>https://dictionary.apa.org/trial</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#ExperementTrialNumber -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#ExperementTrialNumber">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#ExperementTrialCharacterictics"/>
+        <rdfs:comment>Number of the trial.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#ExperimentSettings -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#ExperimentSettings">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#ExperementCharacteristics"/>
+        <rdfs:comment>Characteristics of the evironment in which the experiment was conducted.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#ResponseAccuracy -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#ResponseAccuracy">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#ResponseCharacteristics"/>
+        <rdfs:comment>Accuracy is a measure of performance on a task, usually defined as the proportion of correct responses.</rdfs:comment>
+        <rdfs:isDefinedBy>https://dictionary.apa.org/accuracy</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#ResponseCharacteristics -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#ResponseCharacteristics">
+        <rdfs:comment>Characteristics of the response. Responce is any glandular, muscular, neural, or other reaction to a stimulus. A response is a clearly defined, measurable unit of behavior discussed in terms of its result (e.g., pressing a lever, indicating yes vs. no on a survey item) or its physical characteristics (e.g., raising an arm).</rdfs:comment>
+        <rdfs:isDefinedBy>https://dictionary.apa.org/response</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#ResponseTime -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#ResponseTime">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#ResponseCharacteristics"/>
+        <rdfs:comment>Reaction time is the time that elapses between the onset or presentation of a stimulus and the occurrence of a specific response to that stimulus. There are several types, including simple reaction time and choice reaction time. Reaction time can be used to assess various psychological constructs. To assess negative affect, for example, a researcher might measure the time between presentation of various words with emotional connotations and a participant’s indication that each word is either “positive” or “negative.” Also called response latency; response time.</rdfs:comment>
+        <rdfs:isDefinedBy>https://dictionary.apa.org/reaction-time</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#StimulusCharacteristics -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#StimulusCharacteristics">
+        <rdfs:comment>Characteristics of Stimulus. Distal stimulus in perception, the actual object in the environment that stimulates or acts on a sense organ.</rdfs:comment>
+        <rdfs:isDefinedBy>https://dictionary.apa.org/distal-stimulus</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#StimulusColor -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#StimulusColor">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#StimulusCharacteristics"/>
+        <rdfs:comment>Color of the stimulus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#StimulusCongruence -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#StimulusCongruence">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#StimulusCharacteristics"/>
+        <rdfs:comment>Congruence of the ratio of the side parts of the stimulus (distractors or flankers) to the Central (target). in the Flanker problem fffgffff is a non congruent stimulus and ffffffff is congruent.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#StimulusDescription -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#StimulusDescription">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#StimulusCharacteristics"/>
+        <rdfs:comment>Description of the stimulus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#StimulusIdentificator -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#StimulusIdentificator">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#StimulusCharacteristics"/>
+        <rdfs:comment>Identificator of the stimulus. (ID)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#StimulusNumber -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#StimulusNumber">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#StimulusCharacteristics"/>
+        <rdfs:comment>Number of the stimulus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#StimulusPath -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#StimulusPath">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#StimulusCharacteristics"/>
+        <rdfs:comment>Path to the image or content.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#StimulusPosition -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#StimulusPosition">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#StimulusCharacteristics"/>
+        <rdfs:comment>Position of stimulus parts.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#StimulusSize -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#StimulusSize">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#StimulusCharacteristics"/>
+        <rdfs:comment>Size of the stimulus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#StimulusValence -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#StimulusValence">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#StimulusCharacteristics"/>
+        <rdfs:comment>Valence of the stimulus (positive or negative).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#SubjectAge -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#SubjectAge">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#SubjectIntrinsicCharasteristics"/>
+        <rdfs:comment>Age of the subject. Age is the amount of time that has passed since an organism’s birth; that is, an individual’s chronological age. Compare gestational age.</rdfs:comment>
+        <rdfs:isDefinedBy>https://dictionary.apa.org/age</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#SubjectCharacteristics -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#SubjectCharacteristics">
+        <rdfs:comment>Characteristics of the subjects. Subjecs is generally, the individual human or nonhuman animal that takes part in an experiment or research study and whose responses or performance are reported or evaluated; less frequently, the “subject” may also be an institution, group, or other entity. Many now recommend that the term participant be used for humans, considering the word subject to be depersonalizing and to imply passivity and submissiveness on the part of the experimentee.</rdfs:comment>
+        <rdfs:isDefinedBy>https://dictionary.apa.org/subject</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#SubjectExperimentalCharasteristics -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#SubjectExperimentalCharasteristics">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#SubjectCharacteristics"/>
+        <rdfs:comment>Charaxteristics of the subject that are dependent on the experiment procedure.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#SubjectGroup -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#SubjectGroup">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#SubjectExperimentalCharasteristics"/>
+        <rdfs:comment>Designation of the group that the subject belongs to. Group in research denotes a collection of participants who all experience the same experimental conditions and whose responses are to be compared to the responses of one or more other collections of research participants.</rdfs:comment>
+        <rdfs:isDefinedBy>https://dictionary.apa.org/group</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#SubjectHandedness -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#SubjectHandedness">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#SubjectIntrinsicCharasteristics"/>
+        <rdfs:comment>Handedness of the subject. Handedness is the consistent use of one hand rather than the other in performing certain tasks. The preference usually is related to a dominance effect of the motor cortex on the opposite side of the body. Also called hand dominance; manual dominance. See cerebral dominance; laterality; left-handedness; right-handedness.</rdfs:comment>
+        <rdfs:isDefinedBy>https://dictionary.apa.org/handedness</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#SubjectIntrinsicCharasteristics -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#SubjectIntrinsicCharasteristics">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#SubjectCharacteristics"/>
+        <rdfs:comment>Charasteristics of the subject that are inherent in the subject and are not dependent on the experiment procedure.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#SubjectNumber -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#SubjectNumber">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#SubjectExperimentalCharasteristics"/>
+        <rdfs:comment>Number or ID (identifier) of the subject.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/empirion#SubjectSex -->
+
+    <owl:Class rdf:about="http://www.w3id.org/empirion#SubjectSex">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/empirion#SubjectIntrinsicCharasteristics"/>
+        <rdfs:comment>Sex of the subject. Sex is the traits that distinguish between males and females. Sex refers especially to physical and biological traits, whereas gender refers especially to social or cultural traits, although the distinction between the two terms is not regularly observed.</rdfs:comment>
+        <rdfs:isDefinedBy>https://dictionary.apa.org/sex</rdfs:isDefinedBy>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
