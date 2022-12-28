@@ -8,7 +8,7 @@
          xmlns:empi="http://www.tempuri.org/empirion#">
 
 <owl:Ontology rdf:about="http://empirion.ru/test_github">
-  <owl:imports rdf:resource="https://raw.githubusercontent.com/jimijimiyo/empirion/master/main/empirion.owl"/>
+  <owl:imports rdf:resource="https://raw.githubusercontent.com/jimijimiyo/empirion/master/empirion1/empirion.owl"/>
 </owl:Ontology>
 
 <rdf:Description rdf:about="http://www.tempuri.org/empirion#responseaccuracyrepresentedvariable1">
