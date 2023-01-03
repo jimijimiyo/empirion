@@ -10,7 +10,6 @@
      xmlns:disco="http://rdf-vocabulary.ddialliance.org/discovery#"
      xmlns:empirion="http://www.tempuri.org/empirion#">
     <owl:Ontology rdf:about="http://www.tempuri.org/empirion_exp">
-        <owl:imports rdf:resource="http://www.tempuri.org/empirion_exp"/>
         <rdfs:comment xml:lang="en">The ontology for the desription of datasets obtained in experimental studies.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="https://www.researchgate.net/project/Development-of-the-knowledge-bases-from-empirical-research-datasets-ontological-approach-EMPIRION"/>
         <owl:versionInfo xml:lang="en">Minor additions: all the external semantics (e. g. from disco) is deleted; rdfs:isDefinedBy only applied to the direct import, rdfs:seeAlso for natural language definitions; references to dcat added and qudt added.</owl:versionInfo>
@@ -26,6 +25,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.tempuri.org/empirion#connectedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion#connectedWith"/>
     
 
 
@@ -89,6 +94,42 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.tempuri.org/empirion#Procedure -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion#Procedure"/>
+    
+
+
+    <!-- http://www.tempuri.org/empirion#ProcedureSetting -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion#ProcedureSetting"/>
+    
+
+
+    <!-- http://www.tempuri.org/empirion#Representation -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion#Representation"/>
+    
+
+
+    <!-- http://www.tempuri.org/empirion#RepresentedVariable -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion#RepresentedVariable"/>
+    
+
+
+    <!-- http://www.tempuri.org/empirion#SupportiveFile -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion#SupportiveFile"/>
+    
+
+
+    <!-- http://www.tempuri.org/empirion#Variable -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion#Variable"/>
     
 
 
