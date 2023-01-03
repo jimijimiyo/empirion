@@ -28,16 +28,16 @@
     
 
 
-    <!-- http://www.tempuri.org/empirion#connectedWith -->
+    <!-- http://www.tempuri.org/empirion_exp#connectedWith -->
 
-    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion#connectedWith"/>
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion_exp#connectedWith"/>
     
 
 
     <!-- http://www.tempuri.org/empirion_exp#hasResponseCharacteristics -->
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion_exp#hasResponseCharacteristics">
-        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion#connectedWith"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion_exp#connectedWith"/>
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion_exp#Response"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion_exp#ResponseCharacteristic"/>
         <rdfs:comment>A set of properties for connection of Response with its Response Characteristics. Should be extended with respect to the other characteristics.</rdfs:comment>
@@ -48,7 +48,7 @@
     <!-- http://www.tempuri.org/empirion_exp#hasResponseRole -->
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion_exp#hasResponseRole">
-        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion#connectedWith"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion_exp#connectedWith"/>
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion_exp#Response"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion_exp#ResponseRole"/>
     </owl:ObjectProperty>
@@ -58,7 +58,7 @@
     <!-- http://www.tempuri.org/empirion_exp#hasStimulusCharacteristics -->
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion_exp#hasStimulusCharacteristics">
-        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion#connectedWith"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion_exp#connectedWith"/>
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion_exp#Stimulus"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion_exp#StimulusCharacteristic"/>
         <rdfs:comment>A set of properties for connection of Stimulus with its Stimulus Characteristics. Should be extended with respect to the other characteristics.</rdfs:comment>
@@ -79,7 +79,7 @@
     <!-- http://www.tempuri.org/empirion_exp#hasStimulusRole -->
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion_exp#hasStimulusRole">
-        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion#connectedWith"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion_exp#connectedWith"/>
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion_exp#Stimulus"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion_exp#StimulusRole"/>
     </owl:ObjectProperty>
@@ -97,39 +97,39 @@
     
 
 
-    <!-- http://www.tempuri.org/empirion#Procedure -->
+    <!-- http://www.tempuri.org/empirion_exp#Procedure -->
 
-    <owl:Class rdf:about="http://www.tempuri.org/empirion#Procedure"/>
+    <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#Procedure"/>
     
 
 
-    <!-- http://www.tempuri.org/empirion#ProcedureSetting -->
+    <!-- http://www.tempuri.org/empirion_exp#ProcedureSetting -->
 
-    <owl:Class rdf:about="http://www.tempuri.org/empirion#ProcedureSetting"/>
+    <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#ProcedureSetting"/>
     
 
 
-    <!-- http://www.tempuri.org/empirion#Representation -->
+    <!-- http://www.tempuri.org/empirion_exp#Representation -->
 
-    <owl:Class rdf:about="http://www.tempuri.org/empirion#Representation"/>
+    <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#Representation"/>
     
 
 
-    <!-- http://www.tempuri.org/empirion#RepresentedVariable -->
+    <!-- http://www.tempuri.org/empirion_exp#RepresentedVariable -->
 
-    <owl:Class rdf:about="http://www.tempuri.org/empirion#RepresentedVariable"/>
+    <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#RepresentedVariable"/>
     
 
 
-    <!-- http://www.tempuri.org/empirion#SupportiveFile -->
+    <!-- http://www.tempuri.org/empirion_exp#SupportiveFile -->
 
-    <owl:Class rdf:about="http://www.tempuri.org/empirion#SupportiveFile"/>
+    <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#SupportiveFile"/>
     
 
 
-    <!-- http://www.tempuri.org/empirion#Variable -->
+    <!-- http://www.tempuri.org/empirion_exp#Variable -->
 
-    <owl:Class rdf:about="http://www.tempuri.org/empirion#Variable"/>
+    <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#Variable"/>
     
 
 
@@ -200,7 +200,7 @@
     <!-- http://www.tempuri.org/empirion_exp#CorrectResponse -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#CorrectResponse">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Variable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Variable"/>
         <rdfs:comment xml:lang="en">This is a descriptive variable that contains correct response for the corresponding stimulus.</rdfs:comment>
         <rdfs:label xml:lang="en">Correct Response</rdfs:label>
     </owl:Class>
@@ -210,7 +210,7 @@
     <!-- http://www.tempuri.org/empirion_exp#CorrectResponseRepresentation -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#CorrectResponseRepresentation">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Representation"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Representation"/>
     </owl:Class>
     
 
@@ -218,7 +218,7 @@
     <!-- http://www.tempuri.org/empirion_exp#CorrectResponseRepresentedVariable -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#CorrectResponseRepresentedVariable">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#RepresentedVariable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#RepresentedVariable"/>
     </owl:Class>
     
 
@@ -388,7 +388,7 @@
     <!-- http://www.tempuri.org/empirion_exp#ExperimentCharacteristic -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#ExperimentCharacteristic">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#ProcedureSetting"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#ProcedureSetting"/>
         <rdfs:comment xml:lang="en">Characteristics of an experiment. Experiment is a series of observations conducted under controlled conditions to study a relationship with the purpose of drawing causal inferences about that relationship. An experiment involves the manipulation of an independent variable, the measurement of a dependent variable, and the exposure of various participants to one or more of the conditions being studied. Random selection of participants and their random assignment to conditions also are necessary in experiments.</rdfs:comment>
         <rdfs:label xml:lang="en">Experiment Characteristic</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://dictionary.apa.org/experiment"/>
@@ -409,7 +409,7 @@
     <!-- http://www.tempuri.org/empirion_exp#ExperimentPartCharacteristic -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#ExperimentPartCharacteristic">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Variable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Variable"/>
         <rdfs:comment xml:lang="en">Characteristics of the parts of the experiment.</rdfs:comment>
         <rdfs:label xml:lang="en">Experiment Part Characteristic</rdfs:label>
     </owl:Class>
@@ -419,7 +419,7 @@
     <!-- http://www.tempuri.org/empirion_exp#ExperimentPartCharacteristicRepresentation -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#ExperimentPartCharacteristicRepresentation">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Representation"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Representation"/>
     </owl:Class>
     
 
@@ -427,7 +427,7 @@
     <!-- http://www.tempuri.org/empirion_exp#ExperimentPartCharacteristicRepresentedVariable -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#ExperimentPartCharacteristicRepresentedVariable">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#RepresentedVariable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#RepresentedVariable"/>
     </owl:Class>
     
 
@@ -435,7 +435,7 @@
     <!-- http://www.tempuri.org/empirion_exp#ExperimentProcedure -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#ExperimentProcedure">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Procedure"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Procedure"/>
         <rdfs:comment xml:lang="en">A procedure that experiment is followed.</rdfs:comment>
         <rdfs:label xml:lang="en">Experiment Procedure</rdfs:label>
     </owl:Class>
@@ -632,7 +632,7 @@
     <!-- http://www.tempuri.org/empirion_exp#Response -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#Response">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Variable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Variable"/>
         <rdfs:comment xml:lang="en">The overt or covert behavior which is elicited from the subject in an experimental condition.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.cogpo.org/ontologies/CogPOver2010.owl#COGPO_00175"/>
         <rdfs:label xml:lang="en">Response</rdfs:label>
@@ -671,7 +671,7 @@
     <!-- http://www.tempuri.org/empirion_exp#ResponseCharacteristic -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#ResponseCharacteristic">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Variable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Variable"/>
         <rdfs:comment xml:lang="en">Characteristics of the response. Responce is any glandular, muscular, neural, or other reaction to a stimulus. A response is a clearly defined, measurable unit of behavior discussed in terms of its result (e.g., pressing a lever, indicating yes vs. no on a survey item) or its physical characteristics (e.g., raising an arm).</rdfs:comment>
         <rdfs:label xml:lang="en">Response Characteristic</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://dictionary.apa.org/response"/>
@@ -682,7 +682,7 @@
     <!-- http://www.tempuri.org/empirion_exp#ResponseCharacteristicRepresentation -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#ResponseCharacteristicRepresentation">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Representation"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Representation"/>
     </owl:Class>
     
 
@@ -690,7 +690,7 @@
     <!-- http://www.tempuri.org/empirion_exp#ResponseCharacteristicRepresentedVariable -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#ResponseCharacteristicRepresentedVariable">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#RepresentedVariable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#RepresentedVariable"/>
     </owl:Class>
     
 
@@ -726,7 +726,7 @@
     <!-- http://www.tempuri.org/empirion_exp#ResponseRepresentation -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#ResponseRepresentation">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Representation"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Representation"/>
     </owl:Class>
     
 
@@ -734,7 +734,7 @@
     <!-- http://www.tempuri.org/empirion_exp#ResponseRepresentedVariable -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#ResponseRepresentedVariable">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#RepresentedVariable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#RepresentedVariable"/>
     </owl:Class>
     
 
@@ -742,7 +742,7 @@
     <!-- http://www.tempuri.org/empirion_exp#ResponseRole -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#ResponseRole">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Variable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Variable"/>
         <rdfs:comment xml:lang="en">The role of response is attributed to the overt or covert behavior which is elicited from the subject in an experimental condition.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00134"/>
         <rdfs:label xml:lang="en">Response Role</rdfs:label>
@@ -754,7 +754,7 @@
     <!-- http://www.tempuri.org/empirion_exp#ResponseRoleRepresentation -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#ResponseRoleRepresentation">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Representation"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Representation"/>
     </owl:Class>
     
 
@@ -762,7 +762,7 @@
     <!-- http://www.tempuri.org/empirion_exp#ResponseRoleRepresentedVariable -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#ResponseRoleRepresentedVariable">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#RepresentedVariable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#RepresentedVariable"/>
     </owl:Class>
     
 
@@ -797,7 +797,7 @@
     <!-- http://www.tempuri.org/empirion_exp#Stimulus -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#Stimulus">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Variable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Variable"/>
         <rdfs:comment xml:lang="en">The  object or set of objects, internal or external to the subject, which is intended to generate either an overt or covert response in the subject as part of an experimental condition.</rdfs:comment>
         <rdfs:label xml:lang="en">Stimulus</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://wiki.cogpo.org/index.php?title=Stimulus"/>
@@ -808,7 +808,7 @@
     <!-- http://www.tempuri.org/empirion_exp#StimulusCharacteristic -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#StimulusCharacteristic">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Variable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Variable"/>
         <rdfs:comment xml:lang="en">Characteristics of Stimulus. Distal stimulus in perception, the actual object in the environment that stimulates or acts on a sense organ.</rdfs:comment>
         <rdfs:label xml:lang="en">Stimulus Characteristic</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://dictionary.apa.org/distal-stimulus"/>
@@ -819,7 +819,7 @@
     <!-- http://www.tempuri.org/empirion_exp#StimulusCharacteristicRepresentation -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#StimulusCharacteristicRepresentation">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Representation"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Representation"/>
     </owl:Class>
     
 
@@ -827,7 +827,7 @@
     <!-- http://www.tempuri.org/empirion_exp#StimulusCharacteristicRepresentedVariable -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#StimulusCharacteristicRepresentedVariable">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#RepresentedVariable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#RepresentedVariable"/>
     </owl:Class>
     
 
@@ -887,7 +887,7 @@
     <!-- http://www.tempuri.org/empirion_exp#StimulusFile -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#StimulusFile">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#SupportiveFile"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#SupportiveFile"/>
         <rdfs:comment xml:lang="en">Path to the image or content. Instances of the class are pathes to the corresponding files.</rdfs:comment>
         <rdfs:label xml:lang="en">Stimulus File</rdfs:label>
     </owl:Class>
@@ -1003,7 +1003,7 @@
     <!-- http://www.tempuri.org/empirion_exp#StimulusRepresentation -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#StimulusRepresentation">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Representation"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Representation"/>
     </owl:Class>
     
 
@@ -1011,7 +1011,7 @@
     <!-- http://www.tempuri.org/empirion_exp#StimulusRepresentedVariable -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#StimulusRepresentedVariable">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#RepresentedVariable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#RepresentedVariable"/>
     </owl:Class>
     
 
@@ -1019,7 +1019,7 @@
     <!-- http://www.tempuri.org/empirion_exp#StimulusRole -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#StimulusRole">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Variable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Variable"/>
         <rdfs:comment xml:lang="en">The role of a stimulus in a behavioral experiment is attributed to the object(s) which are presented to the subject in a controlled manner in the context of the experiment.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.cogpo.org/ontologies/CogPOver1.owl#COGPO_00135"/>
         <rdfs:label xml:lang="en">Stimulus Role</rdfs:label>
@@ -1031,7 +1031,7 @@
     <!-- http://www.tempuri.org/empirion_exp#StimulusRoleRepresentation -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#StimulusRoleRepresentation">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Representation"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Representation"/>
     </owl:Class>
     
 
@@ -1039,7 +1039,7 @@
     <!-- http://www.tempuri.org/empirion_exp#StimulusRoleRepresentedVariable -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#StimulusRoleRepresentedVariable">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#RepresentedVariable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#RepresentedVariable"/>
     </owl:Class>
     
 
@@ -1126,7 +1126,7 @@
     <!-- http://www.tempuri.org/empirion_exp#SubjectCharacteristic -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#SubjectCharacteristic">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Variable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Variable"/>
         <rdfs:comment xml:lang="en">Characteristics of the subjects. Subjecs is generally, the individual human or nonhuman animal that takes part in an experiment or research study and whose responses or performance are reported or evaluated; less frequently, the “subject” may also be an institution, group, or other entity. Many now recommend that the term participant be used for humans, considering the word subject to be depersonalizing and to imply passivity and submissiveness on the part of the experimentee.</rdfs:comment>
         <rdfs:label xml:lang="en">Subject Characteristic</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://dictionary.apa.org/subject"/>
@@ -1137,7 +1137,7 @@
     <!-- http://www.tempuri.org/empirion_exp#SubjectCharacteristicRepresentation -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#SubjectCharacteristicRepresentation">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#Representation"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#Representation"/>
     </owl:Class>
     
 
@@ -1145,7 +1145,7 @@
     <!-- http://www.tempuri.org/empirion_exp#SubjectCharacteristicRepresentedVariable -->
 
     <owl:Class rdf:about="http://www.tempuri.org/empirion_exp#SubjectCharacteristicRepresentedVariable">
-        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion#RepresentedVariable"/>
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion_exp#RepresentedVariable"/>
     </owl:Class>
     
 
