@@ -1,0 +1,1037 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.tempuri.org/empirion2#"
+     xml:base="http://www.tempuri.org/empirion2"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:disco="http://rdf-vocabulary.ddialliance.org/discovery#"
+     xmlns:empirion="http://www.tempuri.org/empirion2#">
+    <owl:Ontology rdf:about="http://www.tempuri.org/empirion2">
+        <rdfs:comment xml:lang="en">The ontology for the desription of variables in empirical research datasets.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="https://www.researchgate.net/project/Development-of-the-knowledge-bases-from-empirical-research-datasets-ontological-approach-EMPIRION"/>
+        <owl:versionInfo xml:lang="en">The empirion2 ontology is a reworked version of the empirion ontology that (1) is not focused on the experimental data only and can be applied to any type of empirical research data; (2) embodies content-context-conteiner perspective. More details available at seeAlso link.</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#aCaseOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#aCaseOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#RepresentationValue"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#RepresentedVariableValue"/>
+        <rdfs:label xml:lang="en">a case of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#basedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#basedOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#RepresentedVariable"/>
+        <rdfs:comment xml:lang="en">This property points to the RepresentedVariable the Variable is based on.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdf-vocabulary.ddialliance.org/discovery#basedOn"/>
+        <rdfs:label xml:lang="en">based on</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#connectedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#connectedWith">
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:comment xml:lang="en">A group of properties for connections of variables inside the dataset.</rdfs:comment>
+        <rdfs:label xml:lang="en">connected with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#contained -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#contained">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.tempuri.org/empirion2#contains"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Content"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#Container"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#containerCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#containerCharacteristic">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Container"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#ContainerCharacteristic"/>
+        <rdfs:label xml:lang="en">container characteristic</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#contains">
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Container"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#Content"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#containsVariable -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#containsVariable">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contains"/>
+        <owl:inverseOf rdf:resource="http://www.tempuri.org/empirion2#variableContainedIn"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#DataSet"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:comment xml:lang="en">This property indicates the Variable of a Study and points to Variable contained in the LogicalDataSet.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdf-vocabulary.ddialliance.org/discovery#variable"/>
+        <rdfs:label xml:lang="en">contains variable</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#contentCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#contentCharacteristic">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Content"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#ContentCharacteristic"/>
+        <rdfs:label xml:lang="en">content characteristic</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#contextCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#contextCharacteristic">
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Context"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#ContextCharacteristic"/>
+        <rdfs:label xml:lang="en">context characteristic</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#dataCollectionProcedure -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#dataCollectionProcedure">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#related"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#DataSet"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#DataCollectionProcedure"/>
+        <rdfs:label xml:lang="en">data collection procedure</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#derivedFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#derivedFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#connectedWith"/>
+        <rdfs:comment xml:lang="en">Connection of derived variable with correspondig raw variable.</rdfs:comment>
+        <rdfs:label xml:lang="en">derived from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#hasMeasurementScale -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#hasMeasurementScale">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#MeasurementScale"/>
+        <rdfs:label xml:lang="en">has measurement scale</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#hasMeasurementUnit -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#hasMeasurementUnit">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#MeasurementUnit"/>
+        <rdfs:label xml:lang="en">has neasurement unit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#hasRepresentationValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#hasRepresentationValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Representation"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#RepresentationValue"/>
+        <rdfs:label xml:lang="en">has representation value</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#hasRepresentedVariableValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#hasRepresentedVariableValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#RepresentedVariable"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#RepresentedVariableValue"/>
+        <rdfs:label xml:lang="en">has represented variable value</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#hasType -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#hasType">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#VariableAcquisitionType"/>
+        <rdfs:label xml:lang="en">has type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#hasValueDomain -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#hasValueDomain">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#ValueDomain"/>
+        <rdfs:label xml:lang="en">has value domain</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#hasValueType -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#hasValueType">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#VariableValueType"/>
+        <rdfs:label xml:lang="en">has value type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#measurementValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#measurementValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:comment xml:lang="en">For connection of Representation with its Measurement Value.</rdfs:comment>
+        <rdfs:label xml:lang="en">measurement value</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#metadata -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#metadata">
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#DataFile"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#DataSet"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#MetadataFile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#procedureCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#procedureCharacteristic">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contextCharacteristic"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#DataCollectionProcedure"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#ContextCharacteristic"/>
+        <rdfs:label xml:lang="en">procedure characteristic</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#related -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#related">
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Container"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#Context"/>
+        <rdfs:label xml:lang="en">related</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#representation -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#representation">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#Representation"/>
+        <rdfs:comment xml:lang="en">RepresentedVariables and Variables can have a Representation. [This is not full discovery definition due to different approach applied in the Empirion ontology]</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdf-vocabulary.ddialliance.org/discovery#representation"/>
+        <rdfs:label xml:lang="en">representation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#supportiveData -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#supportiveData">
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#DataFile"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#DataSet"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#SupportiveFile"/>
+        <rdfs:label xml:lang="en">supportive data</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#transformedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#transformedWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#DataTransformationProcedure"/>
+        <rdfs:label xml:lang="en">transformed with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#variableContainedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#variableContainedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contained"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#DataSet"/>
+        <rdfs:comment xml:lang="en">Connect variable with a representation of data file in which the variable contained.</rdfs:comment>
+        <rdfs:label xml:lang="en">variable contained in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#hasMaxValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tempuri.org/empirion2#hasMaxValue">
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#ValueDomain"/>
+        <rdfs:label xml:lang="en">has maximal value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#hasMinValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tempuri.org/empirion2#hasMinValue">
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#ValueDomain"/>
+        <rdfs:label xml:lang="en">has minimal value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#hasNANumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tempuri.org/empirion2#hasNANumber">
+        <rdfs:label xml:lang="en">has NA number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#hasObservationNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tempuri.org/empirion2#hasObservationNumber">
+        <rdfs:label xml:lang="en">has observation number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#Container -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#Container">
+        <rdfs:comment xml:lang="en">Representation of the data in material world, e.g. file with the dataset or license file.</rdfs:comment>
+        <rdfs:label xml:lang="en">Container</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#ContainerCharacteristic -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#ContainerCharacteristic">
+        <rdfs:comment xml:lang="en">Characteristic that describe a Container.</rdfs:comment>
+        <rdfs:label xml:lang="en">Container Characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#Content -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#Content">
+        <rdfs:comment xml:lang="en">A domain aspects that container contents, basically, an object of interest during data integration, can be understood as minimal conceprual block of the dataset, e.g. a variable.</rdfs:comment>
+        <rdfs:label xml:lang="en">Content</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#ContentCharacteristic -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#ContentCharacteristic">
+        <rdfs:comment xml:lang="en">An information necessary to understand a content, e.g. unit of measurement for a variable.</rdfs:comment>
+        <rdfs:label xml:lang="en">Content Characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#Context -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#Context">
+        <rdfs:comment xml:lang="en">A context that is necessary for content understanding, e.g. research procedure for a dataset.</rdfs:comment>
+        <rdfs:label xml:lang="en">Context</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#ContextCharacteristic -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#ContextCharacteristic">
+        <rdfs:comment xml:lang="en">An information that is neede to understand a context characteristics, like procedure settings or instriments used for data collection.</rdfs:comment>
+        <rdfs:label xml:lang="en">Context Characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#DataCollectionInstrument -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#DataCollectionInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#ContextCharacteristic"/>
+        <rdfs:label xml:lang="en">Data Collection Instrument</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#DataCollectionProcedure -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#DataCollectionProcedure">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#Context"/>
+        <rdfs:comment xml:lang="en">A type of data collection procedure.</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Collection Procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#DataCollectionProcedureSetting -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#DataCollectionProcedureSetting">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#ContextCharacteristic"/>
+        <rdfs:label xml:lang="en">Data Collection Procedure Setting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#DataFile -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#DataFile">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#Container"/>
+        <rdfs:comment xml:lang="en">A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+        <rdfs:label xml:lang="en">Data File</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#DataFormat -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#DataFormat">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#ContainerCharacteristic"/>
+        <rdfs:label xml:lang="en">Data Format</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#DataSet -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#DataSet">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#Container"/>
+        <rdfs:comment xml:lang="en">A collection of data, published or curated by a single source, and available for access or download in one or more represenations.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:label xml:lang="en">Data Set</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#DataTransformationProcedure -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#DataTransformationProcedure">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#Context"/>
+        <rdfs:comment xml:lang="en">A type of data transformation procedure.</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Transformation Procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#DataTransformationProcedureSetting -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#DataTransformationProcedureSetting">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#ContextCharacteristic"/>
+        <rdfs:label xml:lang="en">Data Transformation Procedure Setting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#LicenseFile -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#LicenseFile">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#MetadataFile"/>
+        <rdfs:comment xml:lang="en">The file with a license. Instances of the class are pathes to the corresponding files.</rdfs:comment>
+        <rdfs:label xml:lang="en">License File</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#MeasurementScale -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#MeasurementScale">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#VariableSensemaker"/>
+        <rdfs:comment xml:lang="en">An abstract class (that cannot itself be instantiated) that denotes the mathematical properties of values associated with specific variables. The measurement scale denotes the data properties of the measurement but does not itself denote the quality that the variable is measuring. Each scale provides characteristics of a set of values that associated with variables.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Subclasses should be imported from OoEVV.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.scale.MeasurementScale"/>
+        <rdfs:label xml:lang="en">Measurement Scale</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#MeasurementUnit -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#MeasurementUnit">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#VariableSensemaker"/>
+        <rdfs:comment xml:lang="en">Similar to GSIM Unit Type and iao measurement unit label.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://qudt.org/schema/qudt/Unit"/>
+        <rdfs:label xml:lang="en">Measurement Unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#MetadataFile -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#MetadataFile">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#Container"/>
+        <rdfs:comment xml:lang="en">The files with metadata about the data set. Instances of the class are pathes to the corresponding files.</rdfs:comment>
+        <rdfs:label xml:lang="en">Metadata File</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#Representation -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#Representation">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#VariableCharacteristic"/>
+        <rdfs:comment xml:lang="en">The Representation of a variable is the combination of a value domain, datatype, and, if necessary, a unit of measure or a character set.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdf-vocabulary.ddialliance.org/discovery#Representation"/>
+        <rdfs:label xml:lang="en">Representation</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://rdf-vocabulary.ddialliance.org/discovery.html#dfn-disco-representation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#RepresentationSchema -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#RepresentationSchema">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#ContainerCharacteristic"/>
+        <rdfs:label xml:lang="en">Representation Schema</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#RepresentationValue -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#RepresentationValue">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#VariableSensemaker"/>
+        <rdfs:label xml:lang="en">Representation Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#RepresentedVariable -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#RepresentedVariable">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#VariableCharacteristic"/>
+        <rdfs:comment xml:lang="en">Represented Variables encompasse study-independent, re-usable parts of variables like occupation classification.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdf-vocabulary.ddialliance.org/discovery#RepresentedVariable"/>
+        <rdfs:label xml:lang="en">Represented Variable</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://rdf-vocabulary.ddialliance.org/discovery.html#dfn-disco-representedvariable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#RepresentedVariableValue -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#RepresentedVariableValue">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#VariableSensemaker"/>
+        <rdfs:label xml:lang="en">Represented Variable Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#SupportiveFile -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#SupportiveFile">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#Container"/>
+        <rdfs:comment xml:lang="en">Any other files that accompanies the data. This class should be extended with more specific ontologies classes. For example, an ontology of experimental data extends this class with StimulusFile subclass.</rdfs:comment>
+        <rdfs:label xml:lang="en">Supportive File</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#ValueDomain -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#ValueDomain">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#VariableSensemaker"/>
+        <rdfs:comment xml:lang="en">Codifications also count as value domains.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Similar to GSIM Value Domain: The permitted range of values for a characteristic of a variable.</rdfs:comment>
+        <rdfs:label xml:lang="en">Value Domain</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://statswiki.unece.org/display/GSIMclick/Value+Domain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#Variable -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#Variable">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#Content"/>
+        <rdfs:comment xml:lang="en">Variables provide a definition of the column in a rectangular data file. Variable is a characteristic of a unit being observed. A variable might be the answer of a question, have an administrative source, or be derived from other variables.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdf-vocabulary.ddialliance.org/discovery#Variable"/>
+        <rdfs:label xml:lang="en">Variable</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://rdf-vocabulary.ddialliance.org/discovery.html#dfn-disco-variable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#VariableAcquisitionType -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#VariableAcquisitionType">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#VariableCharacteristic"/>
+        <rdfs:comment xml:lang="en">The class contains an individuals that represent different types of variables. During ontology population each variable should be connected with corresponding type.</rdfs:comment>
+        <rdfs:label xml:lang="en">Variable Acquisition Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#VariableCharacteristic -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#VariableCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#ContentCharacteristic"/>
+        <rdfs:label xml:lang="en">Variable Characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#VariableDescriptionFile -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#VariableDescriptionFile">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#MetadataFile"/>
+        <rdfs:comment xml:lang="en">The file with human readable description of the variables in the data set. Often named Codebook or ReadMe. Instances of the class are pathes to the corresponding files.</rdfs:comment>
+        <rdfs:label xml:lang="en">Variable Description File</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#VariableSensemaker -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#VariableSensemaker">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#ContentCharacteristic"/>
+        <rdfs:comment xml:lang="en">This class is temporary storage for the variables&apos; characteristics that are not in the data set itself but are needed for the data correct interpretation.</rdfs:comment>
+        <rdfs:label xml:lang="en">Variable Sensemaker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#VariableValueType -->
+
+    <owl:Class rdf:about="http://www.tempuri.org/empirion2#VariableValueType">
+        <rdfs:subClassOf rdf:resource="http://www.tempuri.org/empirion2#VariableCharacteristic"/>
+        <rdfs:comment xml:lang="en">The class contains an individuals that represent different value types. During ontology population each variable should be connected with corresponding type.</rdfs:comment>
+        <rdfs:label xml:lang="en">Variable Value Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#CueStimilus -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#CueStimilus">
+        <rdfs:label xml:lang="en">Cue Stimulus</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#DerivedVariable -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#DerivedVariable">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion2#VariableAcquisitionType"/>
+        <rdfs:comment xml:lang="en">The variable that was derived by the raw variable.</rdfs:comment>
+        <rdfs:label xml:lang="en">Derived Variable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#DescriptiveVariable -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#DescriptiveVariable">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion2#VariableAcquisitionType"/>
+        <rdfs:label xml:lang="en">Descriptive Variable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#FreeValueVariable -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#FreeValueVariable">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion2#VariableValueType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#MaskStimulus -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#MaskStimulus">
+        <rdfs:label xml:lang="en">Mask Stimulus</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#PrimeResponse -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#PrimeResponse">
+        <rdfs:label xml:lang="en">Prime Response</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#PrimeStimulus -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#PrimeStimulus">
+        <rdfs:label xml:lang="en">Prime Stimulus</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#QualitativeVariable -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#QualitativeVariable">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion2#VariableValueType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#QuantitativeVariable -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#QuantitativeVariable">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion2#VariableValueType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#RawVariable -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#RawVariable">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion2#VariableAcquisitionType"/>
+        <rdfs:comment xml:lang="en">The variable that was retrieved by direct measurement (for example, reaction time or monitor resolution).</rdfs:comment>
+        <rdfs:label xml:lang="en">Raw Variable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#TargetResponse -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#TargetResponse">
+        <rdfs:label xml:lang="en">Target Response</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#TargetStimulus -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#TargetStimulus">
+        <rdfs:label xml:lang="en">Target Stimulus</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#buttonpressrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#buttonpressrepresentedvariable1">
+        <rdfs:label>ButtonPressRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#correctresponserepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#correctresponserepresentedvariable1">
+        <rdfs:label>CorrectResponseRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#covertresponserepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#covertresponserepresentedvariable1">
+        <rdfs:label>CovertResponseRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#digitrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#digitrepresentedvariable1">
+        <rdfs:label>DigitRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#experementblocknumberrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#experementblocknumberrepresentedvariable1">
+        <rdfs:label>ExperementBlockNumberRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#experementtrialnumberrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#experementtrialnumberrepresentedvariable1"/>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#facerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#facerepresentedvariable1">
+        <rdfs:label>FaceRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#implicitstimulusrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#implicitstimulusrepresentedvariable1">
+        <rdfs:label>ImplicitStimulusRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#letterrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#letterrepresentedvariable1">
+        <rdfs:label>LetterRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#picturerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#picturerepresentedvariable1">
+        <rdfs:label>PictureRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#responseaccuracyrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#responseaccuracyrepresentedvariable1">
+        <rdfs:label>ResponseAccuracyRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#responsemodalityrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#responsemodalityrepresentedvariable1">
+        <rdfs:label>ResponseModalityRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#responserolerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#responserolerepresentedvariable1">
+        <rdfs:label>ResponseRoleRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#responsetimerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#responsetimerepresentedvariable1">
+        <rdfs:label>ResponseTimeRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#stimuluscolorrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#stimuluscolorrepresentedvariable1">
+        <rdfs:label>StimulusColorRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#stimuluscongruencerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#stimuluscongruencerepresentedvariable1">
+        <rdfs:label>StimulusCongruenceRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#stimulusidentificatorrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#stimulusidentificatorrepresentedvariable1">
+        <rdfs:label>StimulusIdentificatorRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#stimulusmodalityrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#stimulusmodalityrepresentedvariable1">
+        <rdfs:label>StimulusModalityRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#stimulusnumberrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#stimulusnumberrepresentedvariable1">
+        <rdfs:label>StimulusNumberRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#stimuluspositionrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#stimuluspositionrepresentedvariable1">
+        <rdfs:label>StimulusPositionRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#stimulusrolerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#stimulusrolerepresentedvariable1">
+        <rdfs:label>StimulusRoleRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#stimulussizerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#stimulussizerepresentedvariable1">
+        <rdfs:label>StimulusSizeRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#stimulusvalencerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#stimulusvalencerepresentedvariable1">
+        <rdfs:label>StimulusValenceRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#subjectagerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#subjectagerepresentedvariable1">
+        <rdfs:label>SubjectAgeRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#subjectgrouprepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#subjectgrouprepresentedvariable1">
+        <rdfs:label>SubjectGroupRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#subjecthandednessrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#subjecthandednessrepresentedvariable1">
+        <rdfs:label>SubjectHandednessRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#subjectnumberrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#subjectnumberrepresentedvariable1">
+        <rdfs:label>SubjectNumberRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#subjectsexrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#subjectsexrepresentedvariable1">
+        <rdfs:label>SubjectSexRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#symbolrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#symbolrepresentedvariable1">
+        <rdfs:label>SymbolRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion2#wordrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#wordrepresentedvariable1">
+        <rdfs:label>WordRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
