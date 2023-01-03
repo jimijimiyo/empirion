@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.tempuri.org/empirion#"
-     xml:base="http://www.tempuri.org/empirion"
+<rdf:RDF xmlns="http://www.tempuri.org/empirion_exp#"
+     xml:base="http://www.tempuri.org/empirion_exp"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -10,7 +10,7 @@
      xmlns:disco="http://rdf-vocabulary.ddialliance.org/discovery#"
      xmlns:empirion="http://www.tempuri.org/empirion#">
     <owl:Ontology rdf:about="http://www.tempuri.org/empirion_exp">
-        <owl:imports rdf:resource="http://www.tempuri.org/empirion"/>
+        <owl:imports rdf:resource="http://www.tempuri.org/empirion_exp"/>
         <rdfs:comment xml:lang="en">The ontology for the desription of datasets obtained in experimental studies.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="https://www.researchgate.net/project/Development-of-the-knowledge-bases-from-empirical-research-datasets-ontological-approach-EMPIRION"/>
         <owl:versionInfo xml:lang="en">Minor additions: all the external semantics (e. g. from disco) is deleted; rdfs:isDefinedBy only applied to the direct import, rdfs:seeAlso for natural language definitions; references to dcat added and qudt added.</owl:versionInfo>
