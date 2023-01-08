@@ -12,4 +12,6 @@ The other folders in the repository are:
 - ontology_versions_old with the previous ontology versions including another branch of ontology development (empirion_v4) with a direct import of reused ontologies. The file empirion.owl is always the same as the latest version of the ontology in the main branch (v 3.3 as of March 2022).
 - prototype_old is a first version of the prototype based on our previous project. You can find more about it in our paper A method of semi-automated ontology population from multiple semi-structured data sources (https://doi.org/10.1177/016555152095024).
 
+This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
 The project's page and publications: https://www.researchgate.net/project/Development-of-the-knowledge-bases-from-empirical-research-datasets-ontological-approach-EMPIRION
