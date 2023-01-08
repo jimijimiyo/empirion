@@ -9,13 +9,52 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:disco="http://rdf-vocabulary.ddialliance.org/discovery#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:empirion="http://www.tempuri.org/empirion2#">
     <owl:Ontology rdf:about="http://www.tempuri.org/empirion2">
-        <rdfs:comment xml:lang="en">The ontology for the desription of variables in empirical research datasets. This work is licensed under the Creative Commons Attribution 4.0 International License.</rdfs:comment>
+        <terms:creator xml:lang="en">Alena Begler</terms:creator>
+        <terms:date xml:lang="en">2023 Jan</terms:date>
+        <terms:license xml:lang="en">Creative Commons Attribution 4.0 International License</terms:license>
+        <rdfs:comment xml:lang="en">The ontology for the desription of variables in empirical research datasets.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="https://github.com/jimijimiyo/empirion"/>
         <rdfs:seeAlso rdf:resource="https://www.researchgate.net/project/Development-of-the-knowledge-bases-from-empirical-research-datasets-ontological-approach-EMPIRION"/>
-        <rdfs:seeAlso xml:lang="en">https://github.com/jimijimiyo/empirion</rdfs:seeAlso>
-        <owl:versionInfo xml:lang="en">The empirion2 ontology is a reworked version of the empirion ontology that (1) is not focused on the experimental data only and can be applied to any type of empirical research data; (2) embodies content-context-conteiner perspective. More details available at seeAlso link.</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">The empirion2 ontology is a reworked version of the empirion ontology that (1) is not focused on the experimental data only and can be applied to any type of empirical research data; (2) embodies content-context-conteiner perspective. More details available at seeAlso links.</owl:versionInfo>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/date"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/replaces -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/replaces"/>
     
 
 
@@ -1063,6 +1102,17 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#Container"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#ContainerCharacteristic"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#Content"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#ContentCharacteristic"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#Context"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#ContextCharacteristic"/>
+        </owl:members>
+    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
