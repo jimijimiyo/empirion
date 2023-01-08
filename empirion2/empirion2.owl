@@ -61,6 +61,7 @@
         <owl:inverseOf rdf:resource="http://www.tempuri.org/empirion2#contains"/>
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Content"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#Container"/>
+        <rdfs:label xml:lang="en">contained</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -81,20 +82,7 @@
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#contains">
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Container"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#Content"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.tempuri.org/empirion2#containsVariable -->
-
-    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#containsVariable">
-        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contains"/>
-        <owl:inverseOf rdf:resource="http://www.tempuri.org/empirion2#variableContainedIn"/>
-        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#DataSet"/>
-        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
-        <rdfs:comment xml:lang="en">This property indicates the Variable of a Study and points to Variable contained in the LogicalDataSet.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://rdf-vocabulary.ddialliance.org/discovery#variable"/>
-        <rdfs:label xml:lang="en">contains variable</rdfs:label>
+        <rdfs:label xml:lang="en">contains</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -147,6 +135,8 @@
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#derivedFrom">
         <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#connectedWith"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
         <rdfs:comment xml:lang="en">Connection of derived variable with correspondig raw variable.</rdfs:comment>
         <rdfs:label xml:lang="en">derived from</rdfs:label>
     </owl:ObjectProperty>
@@ -247,6 +237,7 @@
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#metadata">
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#DataFile"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#MetadataFile"/>
+        <rdfs:label xml:lang="en">metadata</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -320,10 +311,13 @@
     <!-- http://www.tempuri.org/empirion2#variable -->
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#variable">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contains"/>
         <owl:inverseOf rdf:resource="http://www.tempuri.org/empirion2#variableContainedIn"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#DataFile"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
         <rdfs:comment xml:lang="en">This property indicates the Variable of a Study and points to Variable contained in the LogicalDataSet.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://rdf-vocabulary.ddialliance.org/discovery#variable"/>
-        <rdfs:label xml:lang="en">variable</rdfs:label>
+        <rdfs:label xml:lang="en">contains variable</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -355,6 +349,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.tempuri.org/empirion2#hasMaxValue">
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#ValueDomain"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <rdfs:label xml:lang="en">has maximal value</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -364,6 +359,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.tempuri.org/empirion2#hasMinValue">
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#ValueDomain"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <rdfs:label xml:lang="en">has minimal value</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -372,6 +368,8 @@
     <!-- http://www.tempuri.org/empirion2#hasNANumber -->
 
     <owl:DatatypeProperty rdf:about="http://www.tempuri.org/empirion2#hasNANumber">
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:label xml:lang="en">has NA number</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -380,6 +378,8 @@
     <!-- http://www.tempuri.org/empirion2#hasObservationNumber -->
 
     <owl:DatatypeProperty rdf:about="http://www.tempuri.org/empirion2#hasObservationNumber">
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:label xml:lang="en">has observation number</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -1052,6 +1052,64 @@
     <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion2#wordrepresentedvariable1">
         <rdfs:label>WordRepresentedVariable</rdfs:label>
     </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#CueStimilus"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#DerivedVariable"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#DescriptiveVariable"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#FreeValueVariable"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#MaskStimulus"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#PrimeResponse"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#PrimeStimulus"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#QualitativeVariable"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#QuantitativeVariable"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#RawVariable"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#TargetResponse"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#TargetStimulus"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#buttonpressrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#correctresponserepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#covertresponserepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#digitrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#experementblocknumberrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#experementtrialnumberrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#facerepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#implicitstimulusrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#letterrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#picturerepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#responseaccuracyrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#responsemodalityrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#responserolerepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#responsetimerepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#stimuluscolorrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#stimuluscongruencerepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#stimulusidentificatorrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#stimulusmodalityrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#stimulusnumberrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#stimuluspositionrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#stimulusrolerepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#stimulussizerepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#stimulusvalencerepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#subjectagerepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#subjectgrouprepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#subjecthandednessrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#subjectnumberrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#subjectsexrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#symbolrepresentedvariable1"/>
+            <rdf:Description rdf:about="http://www.tempuri.org/empirion2#wordrepresentedvariable1"/>
+        </owl:distinctMembers>
+    </rdf:Description>
 </rdf:RDF>
 
 
