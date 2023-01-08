@@ -11,8 +11,9 @@
      xmlns:disco="http://rdf-vocabulary.ddialliance.org/discovery#"
      xmlns:empirion="http://www.tempuri.org/empirion2#">
     <owl:Ontology rdf:about="http://www.tempuri.org/empirion2">
-        <rdfs:comment xml:lang="en">The ontology for the desription of variables in empirical research datasets.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The ontology for the desription of variables in empirical research datasets. This work is licensed under the Creative Commons Attribution 4.0 International License.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="https://www.researchgate.net/project/Development-of-the-knowledge-bases-from-empirical-research-datasets-ontological-approach-EMPIRION"/>
+        <rdfs:seeAlso xml:lang="en">https://github.com/jimijimiyo/empirion</rdfs:seeAlso>
         <owl:versionInfo xml:lang="en">The empirion2 ontology is a reworked version of the empirion ontology that (1) is not focused on the experimental data only and can be applied to any type of empirical research data; (2) embodies content-context-conteiner perspective. More details available at seeAlso link.</owl:versionInfo>
     </owl:Ontology>
     
@@ -26,17 +27,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://www.tempuri.org/empirion2#aCaseOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#aCaseOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
-        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#RepresentationValue"/>
-        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#RepresentedVariableValue"/>
-        <rdfs:label xml:lang="en">a case of</rdfs:label>
-    </owl:ObjectProperty>
     
 
 
@@ -120,6 +110,18 @@
     
 
 
+    <!-- http://www.tempuri.org/empirion2#contentInterpretation -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#contentInterpretation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#VariableCharacteristic"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#VariableSensemaker"/>
+        <rdfs:comment xml:lang="en">For connection of variable characteristics with their sensemakers.</rdfs:comment>
+        <rdfs:label xml:lang="en">content interpretation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.tempuri.org/empirion2#contextCharacteristic -->
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#contextCharacteristic">
@@ -173,10 +175,22 @@
     
 
 
+    <!-- http://www.tempuri.org/empirion2#hasMeasurementValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#hasMeasurementValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentInterpretation"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Representation"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#RepresentationValue"/>
+        <rdfs:comment xml:lang="en">For connection of Representation with its Measurement Value.</rdfs:comment>
+        <rdfs:label xml:lang="en">has measurement value</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.tempuri.org/empirion2#hasRepresentationValue -->
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#hasRepresentationValue">
-        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentInterpretation"/>
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Representation"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#RepresentationValue"/>
         <rdfs:label xml:lang="en">has representation value</rdfs:label>
@@ -187,7 +201,7 @@
     <!-- http://www.tempuri.org/empirion2#hasRepresentedVariableValue -->
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#hasRepresentedVariableValue">
-        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentInterpretation"/>
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#RepresentedVariable"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#RepresentedVariableValue"/>
         <rdfs:label xml:lang="en">has represented variable value</rdfs:label>
@@ -209,8 +223,8 @@
     <!-- http://www.tempuri.org/empirion2#hasValueDomain -->
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#hasValueDomain">
-        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
-        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentInterpretation"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Representation"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#ValueDomain"/>
         <rdfs:label xml:lang="en">has value domain</rdfs:label>
     </owl:ObjectProperty>
@@ -220,21 +234,10 @@
     <!-- http://www.tempuri.org/empirion2#hasValueType -->
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#hasValueType">
-        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
-        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
-        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#VariableValueType"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentInterpretation"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Representation"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#RepresentationValue"/>
         <rdfs:label xml:lang="en">has value type</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.tempuri.org/empirion2#measurementValue -->
-
-    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#measurementValue">
-        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contentCharacteristic"/>
-        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
-        <rdfs:comment xml:lang="en">For connection of Representation with its Measurement Value.</rdfs:comment>
-        <rdfs:label xml:lang="en">measurement value</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -243,7 +246,6 @@
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#metadata">
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#DataFile"/>
-        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#DataSet"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#MetadataFile"/>
     </owl:ObjectProperty>
     
@@ -283,11 +285,21 @@
     
 
 
+    <!-- http://www.tempuri.org/empirion2#represents -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#represents">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#RepresentationValue"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#RepresentedVariableValue"/>
+        <rdfs:label xml:lang="en">represents</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.tempuri.org/empirion2#supportiveData -->
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#supportiveData">
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#DataFile"/>
-        <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#DataSet"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#SupportiveFile"/>
         <rdfs:label xml:lang="en">supportive data</rdfs:label>
     </owl:ObjectProperty>
@@ -305,12 +317,23 @@
     
 
 
+    <!-- http://www.tempuri.org/empirion2#variable -->
+
+    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#variable">
+        <owl:inverseOf rdf:resource="http://www.tempuri.org/empirion2#variableContainedIn"/>
+        <rdfs:comment xml:lang="en">This property indicates the Variable of a Study and points to Variable contained in the LogicalDataSet.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://rdf-vocabulary.ddialliance.org/discovery#variable"/>
+        <rdfs:label xml:lang="en">variable</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.tempuri.org/empirion2#variableContainedIn -->
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#variableContainedIn">
         <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#contained"/>
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#Variable"/>
-        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#DataSet"/>
+        <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#DataFile"/>
         <rdfs:comment xml:lang="en">Connect variable with a representation of data file in which the variable contained.</rdfs:comment>
         <rdfs:label xml:lang="en">variable contained in</rdfs:label>
     </owl:ObjectProperty>
