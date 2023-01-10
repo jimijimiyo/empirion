@@ -8,12 +8,15 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:disco="http://rdf-vocabulary.ddialliance.org/discovery#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:empirion="http://www.tempuri.org/empirion_exp#">
     <owl:Ontology rdf:about="http://www.tempuri.org/empirion_exp">
         <owl:imports rdf:resource="http://www.tempuri.org/empirion2"/>
-        <rdfs:comment xml:lang="en">The ontology for the desription of datasets obtained in experimental studies.</rdfs:comment>
+        <terms:creator xml:lang="en">Alena Begler</terms:creator>
+        <terms:license xml:lang="en">Creative Commons Attribution 4.0 International License</terms:license>
+        <rdfs:comment xml:lang="en">The ontology for the desription of datasets obtained in experimental studies. The ontology is an extension of empirion2 ontology (and directly imports it), and reuse by reference domain ontologies for experimental data Cognitive Paradigm Ontology (CogPO) and Cognitive Atlas Ontology (cogat).</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="https://github.com/jimijimiyo/empirion/"/>
         <rdfs:seeAlso rdf:resource="https://www.researchgate.net/project/Development-of-the-knowledge-bases-from-empirical-research-datasets-ontological-approach-EMPIRION"/>
-        <owl:versionInfo xml:lang="en">Minor additions: all the external semantics (e. g. from disco) is deleted; rdfs:isDefinedBy only applied to the direct import, rdfs:seeAlso for natural language definitions; references to dcat added and qudt added.</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -29,19 +32,14 @@
     
 
 
-    <!-- http://www.tempuri.org/empirion_exp#connectedWith -->
-
-    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion_exp#connectedWith"/>
-    
-
-
     <!-- http://www.tempuri.org/empirion_exp#hasResponseCharacteristics -->
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion_exp#hasResponseCharacteristics">
-        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion_exp#connectedWith"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#connectedWith"/>
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion_exp#Response"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion_exp#ResponseCharacteristic"/>
         <rdfs:comment>A set of properties for connection of Response with its Response Characteristics. Should be extended with respect to the other characteristics.</rdfs:comment>
+        <rdfs:label xml:lang="en">has response characteristics</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -49,9 +47,10 @@
     <!-- http://www.tempuri.org/empirion_exp#hasResponseRole -->
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion_exp#hasResponseRole">
-        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion_exp#connectedWith"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#connectedWith"/>
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion_exp#Response"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion_exp#ResponseRole"/>
+        <rdfs:label xml:lang="en">has response role</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -59,10 +58,11 @@
     <!-- http://www.tempuri.org/empirion_exp#hasStimulusCharacteristics -->
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion_exp#hasStimulusCharacteristics">
-        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion_exp#connectedWith"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#connectedWith"/>
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion_exp#Stimulus"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion_exp#StimulusCharacteristic"/>
         <rdfs:comment>A set of properties for connection of Stimulus with its Stimulus Characteristics. Should be extended with respect to the other characteristics.</rdfs:comment>
+        <rdfs:label xml:lang="en">has stimulus characteristics</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -73,6 +73,7 @@
         <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion_exp#hasStimulusCharacteristics"/>
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion_exp#Stimulus"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion_exp#StimulusModality"/>
+        <rdfs:label xml:lang="en">has stimulus modality</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -80,9 +81,10 @@
     <!-- http://www.tempuri.org/empirion_exp#hasStimulusRole -->
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion_exp#hasStimulusRole">
-        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion_exp#connectedWith"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.tempuri.org/empirion2#connectedWith"/>
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion_exp#Stimulus"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion_exp#StimulusRole"/>
+        <rdfs:label xml:lang="en">has stimulus role</rdfs:label>
     </owl:ObjectProperty>
     
 
