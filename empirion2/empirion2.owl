@@ -319,6 +319,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#represents">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.tempuri.org/empirion2#RepresentationValue"/>
         <rdfs:range rdf:resource="http://www.tempuri.org/empirion2#RepresentedVariableValue"/>
         <rdfs:label xml:lang="en">represents</rdfs:label>
