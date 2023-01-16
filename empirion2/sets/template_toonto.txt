@@ -1,0 +1,6 @@
+DataFile			filename.csv
+VariableDescription	filename.txt
+
+					ontology class		value domains		variable representations
+variable1_name		
+variable2_name
