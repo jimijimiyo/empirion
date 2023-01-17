@@ -11,7 +11,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:empirion="http://www.tempuri.org/empirion_exp#">
     <owl:Ontology rdf:about="http://www.tempuri.org/empirion_exp">
-        <owl:imports rdf:resource="https://raw.githubusercontent.com/jimijimiyo/empirion/master/empirion2/empirion2.owl"/>
+        <owl:imports rdf:resource="http://www.tempuri.org/empirion2"/>
         <terms:creator xml:lang="en">Alena Begler</terms:creator>
         <terms:license xml:lang="en">Creative Commons Attribution 4.0 International License</terms:license>
         <rdfs:comment xml:lang="en">The ontology for the desription of datasets obtained in experimental studies. The ontology is an extension of empirion2 ontology (and directly imports it), and reuse by reference domain ontologies for experimental data Cognitive Paradigm Ontology (CogPO) and Cognitive Atlas Ontology (cogat).</rdfs:comment>
@@ -24,40 +24,11 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.org/dc/terms/creator -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/license -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://www.tempuri.org/empirion2#connectedWith -->
-
-    <owl:ObjectProperty rdf:about="http://www.tempuri.org/empirion2#connectedWith"/>
     
 
 
@@ -126,42 +97,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://www.tempuri.org/empirion2#DataCollectionProcedure -->
-
-    <owl:Class rdf:about="http://www.tempuri.org/empirion2#DataCollectionProcedure"/>
-    
-
-
-    <!-- http://www.tempuri.org/empirion2#DataCollectionProcedureSetting -->
-
-    <owl:Class rdf:about="http://www.tempuri.org/empirion2#DataCollectionProcedureSetting"/>
-    
-
-
-    <!-- http://www.tempuri.org/empirion2#Representation -->
-
-    <owl:Class rdf:about="http://www.tempuri.org/empirion2#Representation"/>
-    
-
-
-    <!-- http://www.tempuri.org/empirion2#RepresentedVariable -->
-
-    <owl:Class rdf:about="http://www.tempuri.org/empirion2#RepresentedVariable"/>
-    
-
-
-    <!-- http://www.tempuri.org/empirion2#SupportiveFile -->
-
-    <owl:Class rdf:about="http://www.tempuri.org/empirion2#SupportiveFile"/>
-    
-
-
-    <!-- http://www.tempuri.org/empirion2#Variable -->
-
-    <owl:Class rdf:about="http://www.tempuri.org/empirion2#Variable"/>
     
 
 
@@ -1413,6 +1348,23 @@
     
 
 
+    <!-- http://www.tempuri.org/empirion_exp#DerivedVariable -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#DerivedVariable">
+        <rdfs:comment xml:lang="en">The variable that was derived by the raw variable.</rdfs:comment>
+        <rdfs:label xml:lang="en">Derived Variable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#DescriptiveVariable -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#DescriptiveVariable">
+        <rdfs:label xml:lang="en">Descriptive Variable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.tempuri.org/empirion_exp#MaskStimulus -->
 
     <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#MaskStimulus">
@@ -1440,6 +1392,15 @@
     
 
 
+    <!-- http://www.tempuri.org/empirion_exp#RawVariable -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#RawVariable">
+        <rdfs:comment xml:lang="en">The variable that was retrieved by direct measurement (for example, reaction time or monitor resolution).</rdfs:comment>
+        <rdfs:label xml:lang="en">Raw Variable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.tempuri.org/empirion_exp#TargetResponse -->
 
     <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#TargetResponse">
@@ -1454,6 +1415,275 @@
     <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#TargetStimulus">
         <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#StimulusRole"/>
         <rdfs:label xml:lang="en">Target Stimulus</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#buttonpressrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#buttonpressrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#ButtonPressRepresentedVariable"/>
+        <rdfs:label>ButtonPressRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#correctresponserepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#correctresponserepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#CorrectResponseRepresentedVariable"/>
+        <rdfs:label>CorrectResponseRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#covertresponserepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#covertresponserepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#CovertResponseRepresentedVariable"/>
+        <rdfs:label>CovertResponseRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#digitrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#digitrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#DigitRepresentedVariable"/>
+        <rdfs:label>DigitRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#experementblocknumberrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#experementblocknumberrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#ExperementBlockNumberRepresentedVariable"/>
+        <rdfs:label>ExperementBlockNumberRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#experementtrialnumberrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#experementtrialnumberrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#ExperementTrialNumberRepresentedVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#facerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#facerepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#FaceRepresentedVariable"/>
+        <rdfs:label>FaceRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#implicitstimulusrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#implicitstimulusrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#ImplicitStimulusRepresentedVariable"/>
+        <rdfs:label>ImplicitStimulusRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#letterrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#letterrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#LetterRepresentedVariable"/>
+        <rdfs:label>LetterRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#picturerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#picturerepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#PictureRepresentedVariable"/>
+        <rdfs:label>PictureRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#responseaccuracyrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#responseaccuracyrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#ResponseAccuracyRepresentedVariable"/>
+        <rdfs:label>ResponseAccuracyRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#responsemodalityrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#responsemodalityrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#ResponseModalityRepresentedVariable"/>
+        <rdfs:label>ResponseModalityRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#responserolerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#responserolerepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#ResponseRoleRepresentedVariable"/>
+        <rdfs:label>ResponseRoleRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#responsetimerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#responsetimerepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#ResponseTimeRepresentedVariable"/>
+        <rdfs:label>ResponseTimeRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#stimuluscolorrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#stimuluscolorrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#StimulusColorRepresentedVariable"/>
+        <rdfs:label>StimulusColorRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#stimuluscongruencerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#stimuluscongruencerepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#StimulusCongruenceRepresentedVariable"/>
+        <rdfs:label>StimulusCongruenceRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#stimulusidentificatorrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#stimulusidentificatorrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#StimulusIdentificatorRepresentedVariable"/>
+        <rdfs:label>StimulusIdentificatorRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#stimulusmodalityrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#stimulusmodalityrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#StimulusModalityRepresentedVariable"/>
+        <rdfs:label>StimulusModalityRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#stimulusnumberrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#stimulusnumberrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#StimulusNumberRepresentedVariable"/>
+        <rdfs:label>StimulusNumberRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#stimuluspositionrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#stimuluspositionrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#StimulusPositionRepresentedVariable"/>
+        <rdfs:label>StimulusPositionRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#stimulusrolerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#stimulusrolerepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#StimulusRoleRepresentedVariable"/>
+        <rdfs:label>StimulusRoleRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#stimulussizerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#stimulussizerepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#StimulusSizeRepresentedVariable"/>
+        <rdfs:label>StimulusSizeRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#stimulusvalencerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#stimulusvalencerepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#StimulusValenceRepresentedVariable"/>
+        <rdfs:label>StimulusValenceRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#subjectagerepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#subjectagerepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#SubjectAgeRepresentedVariable"/>
+        <rdfs:label>SubjectAgeRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#subjectgrouprepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#subjectgrouprepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#SubjectGroupRepresentedVariable"/>
+        <rdfs:label>SubjectGroupRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#subjecthandednessrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#subjecthandednessrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#SubjectHandednessRepresentedVariable"/>
+        <rdfs:label>SubjectHandednessRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#subjectnumberrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#subjectnumberrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#SubjectNumberRepresentedVariable"/>
+        <rdfs:label>SubjectNumberRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#subjectsexrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#subjectsexrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#SubjectSexRepresentedVariable"/>
+        <rdfs:label>SubjectSexRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#symbolrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#symbolrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#SymbolRepresentedVariable"/>
+        <rdfs:label>SymbolRepresentedVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tempuri.org/empirion_exp#wordrepresentedvariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tempuri.org/empirion_exp#wordrepresentedvariable1">
+        <rdf:type rdf:resource="http://www.tempuri.org/empirion_exp#WordRepresentedVariable"/>
+        <rdfs:label>WordRepresentedVariable</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 
