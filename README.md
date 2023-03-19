@@ -7,7 +7,7 @@ To run the example on your local machine download **empirion2_exp** folder, afte
 - While the code is executed it will ask you to choose the path to the datasets for ontology population. We put some datasets and corresponding files in the sets folder, so chose it. Sometimes this window does not pop up, check the background windows, please. 
 - Check the empirion_pop.owl file, it should be filled with individuals now. (The file empirion_pop_filled.owl is the example of what you should have, it contains empirion ontology filled with data from the sets forlder.)
 
-To run the empirion on your oen example download a folder **empirion2** and follow instructions on reuse in [https://doi.org/10.13140/RG.2.2.31390.00325].
+To run the empirion on your oen example download a folder **empirion2** and follow instructions on reuse in https://doi.org/10.13140/RG.2.2.31390.00325.
 
 The other folders in the repository are:
 - empirion1 is the first version of the ontology that was dedicated data from the behavioral experiments and prototype for its automatic population.
